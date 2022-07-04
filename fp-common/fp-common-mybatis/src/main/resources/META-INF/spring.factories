@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.imguo.common.myabtis.config.MybatisPlusConfig,\
+   com.imguo.common.myabtis.handler.ListStringTypeHandler,\
+     com.imguo.common.myabtis.handler.JsonObjTypeHandler,\
+   com.imguo.common.myabtis.config.FpWebMvcConfigurer

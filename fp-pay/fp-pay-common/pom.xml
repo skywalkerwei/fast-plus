@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>fp-pay</artifactId>
+        <groupId>com.imguo</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>fp-pay-common</artifactId>
+    <description>支付公共模块</description>
+
+    <properties>
+        <weixin-java-pay.version>4.2.0</weixin-java-pay.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.imguo</groupId>
+            <artifactId>fp-common-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.imguo</groupId>
+            <artifactId>fp-common-mybatis</artifactId>
+        </dependency>
+        <!--           wxjava 支付-->
+        <dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-pay</artifactId>
+            <version>${weixin-java-pay.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>
