@@ -17,8 +17,6 @@ import java.lang.reflect.Method;
 /**
  * 内部接口调用处理 aop
  *
- * @author lijx
- * @date 2022/6/28
  */
 @Slf4j
 @Aspect

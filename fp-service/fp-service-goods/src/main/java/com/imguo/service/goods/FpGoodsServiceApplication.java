@@ -1,8 +1,9 @@
-package com.imguo.service;
+package com.imguo.service.goods;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+//@SpringBootApplication(scanBasePackages = {"com.imguo.common.core","com.imguo.service.goods"})
 @SpringBootApplication
 public class FpGoodsServiceApplication {
 

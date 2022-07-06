@@ -20,11 +20,5 @@
         <module>fp-common-job</module>
         <module>fp-common-nacos</module>
     </modules>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-    </dependencies>
 
 </project>
