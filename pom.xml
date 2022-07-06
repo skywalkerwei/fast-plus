@@ -15,7 +15,6 @@
         <module>fp-gateway</module>
         <module>fp-pay</module>
         <module>fp-service</module>
-        <module>fp-model</module>
     </modules>
 
     <properties>
@@ -239,6 +238,13 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring-boot.version}</version>
+                <exclusions>
+                    <!--排除tomcat依赖-->
+                    <exclusion>
+                        <artifactId>spring-boot-starter-tomcat</artifactId>
+                        <groupId>org.springframework.boot</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <!--			 https://mvnrepository.com/artifact/com.github.oshi/oshi-core -->
             <dependency>
