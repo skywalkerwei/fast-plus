@@ -5,7 +5,7 @@ package com.imguo.common.core.constant;
  *
  */
 public class CommonConstants {
-  public static final int SUCCESS = 0;
+  public static final int SUCCESS = 1;
 
   public static final int FAIL = -1;
 

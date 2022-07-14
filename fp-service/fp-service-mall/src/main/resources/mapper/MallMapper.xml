@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imguo.service.mall.mapper.MallMapper">
+
+    <resultMap id="BaseResultMap" type="com.imguo.model.mall.domain.Mall">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="universityId" column="university_id" jdbcType="INTEGER"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="tel" column="tel" jdbcType="VARCHAR"/>
+            <result property="notice" column="notice" jdbcType="VARCHAR"/>
+            <result property="distributionFee" column="distribution_fee" jdbcType="DECIMAL"/>
+            <result property="createdAt" column="created_at" jdbcType="BIGINT"/>
+            <result property="updatedAt" column="updated_at" jdbcType="BIGINT"/>
+            <result property="deletedAt" column="deleted_at" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,university_id,name,
+        tel,notice,distribution_fee,
+        created_at,updated_at,deleted_at
+    </sql>
+</mapper>

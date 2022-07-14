@@ -16,15 +16,13 @@ import org.springframework.context.annotation.Configuration;
  * @since 2022/2/15 15:48
  */
 @Configuration
-@MapperScan("com.imguo.**.mapper")
+@MapperScan("com.imguo.service.*.mapper")
 public class MybatisPlusConfig {
   /**
    * 使用多个功能需要注意顺序关系,建议使用如下顺序
    *
    * <p>多租户,动态表名 分页,乐观锁 sql 性能规范,防止全表更新与删除 总结: 对 sql 进行单次改造的优先放入,不对 sql 进行改造的最后放入
    *
-   * @author lijx
-   * @since 2022/2/16 15:24
    */
   @Bean
   public MybatisPlusInterceptor mybatisPlusInterceptor() {

@@ -12,7 +12,9 @@
     <artifactId>fp-service</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>fp-service-goods</module>
+        <module>fp-service-mall</module>
+        <module>fp-service-wxapp</module>
+        <module>fp-service-test</module>
     </modules>
 
 

@@ -15,9 +15,12 @@
         <module>fp-gateway</module>
         <module>fp-pay</module>
         <module>fp-service</module>
+        <module>fp-auth</module>
+        <module>fp-feign</module>
+        <module>fp-model</module>
     </modules>
-
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <ttl.version>2.11.4</ttl.version>
         <hikariCP.version>4.0.3</hikariCP.version>
@@ -106,6 +109,18 @@
             <dependency>
                 <groupId>com.imguo</groupId>
                 <artifactId>fp-common-nacos</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.imguo</groupId>
+                <artifactId>fp-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.imguo</groupId>
+                <artifactId>fp-feign</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

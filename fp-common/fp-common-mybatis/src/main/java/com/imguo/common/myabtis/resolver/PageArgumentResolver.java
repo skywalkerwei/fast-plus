@@ -29,8 +29,6 @@ public class PageArgumentResolver implements HandlerMethodArgumentResolver {
   /**
    * 处理Controller中方法 page对象参数
    *
-   * @author lijx
-   * @date 2022/6/10
    */
   @SuppressWarnings("rawtypes")
   @Override

@@ -1,4 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
    com.imguo.common.security.handler.FpGlobalExceptionHandlerResolver,\
-  com.imguo.common.security.config.SaTokenConfigure,\
-   com.imguo.common.security.service.impl.HxPermissionsImpl
+   com.imguo.common.security.config.SaTokenConfigure,\
+   com.imguo.common.security.service.impl.FpPermissionsImpl

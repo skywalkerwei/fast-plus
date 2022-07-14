@@ -14,11 +14,11 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: fp-service-goods
-          uri: lb://fp-service-goods
+        - id: fp-service-mall
+          uri: lb://fp-service-mall
           order: 1
           predicates:
-            - Path=/sys/**
+            - Path=/mall/**
           filters:
             - StripPrefix=1
         - id: openapi

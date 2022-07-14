@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imguo.service.mall.mapper.MallGoodsMapper">
+
+    <resultMap id="BaseResultMap" type="com.imguo.model.mall.domain.MallGoods">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="mid" column="mid" jdbcType="INTEGER"/>
+            <result property="categoryId" column="category_id" jdbcType="INTEGER"/>
+            <result property="goodsName" column="goods_name" jdbcType="VARCHAR"/>
+            <result property="image" column="image" jdbcType="VARCHAR"/>
+            <result property="sellNumber" column="sell_number" jdbcType="INTEGER"/>
+            <result property="sku" column="sku" jdbcType="OTHER"/>
+            <result property="showPrice" column="show_price" jdbcType="DECIMAL"/>
+            <result property="describes" column="describes" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="TINYINT"/>
+            <result property="weight" column="weight" jdbcType="INTEGER"/>
+            <result property="createdAt" column="created_at" jdbcType="BIGINT"/>
+            <result property="updatedAt" column="updated_at" jdbcType="BIGINT"/>
+            <result property="deletedAt" column="deleted_at" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,mid,category_id,
+        goods_name,image,sell_number,
+        sku,show_price,describes,
+        status,weight,created_at,
+        updated_at,deleted_at
+    </sql>
+</mapper>

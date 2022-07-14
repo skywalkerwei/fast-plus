@@ -15,8 +15,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
  * 注解鉴权
  *
- * @author Administrator
- * @date 2022/6/27 22:48
  */
 @Slf4j
 @Configuration
@@ -28,21 +26,21 @@ public class SaTokenConfigure implements WebMvcConfigurer {
     registry.addInterceptor(new SaAnnotationInterceptor()).addPathPatterns("/**");
   }
 
-  @Bean
-  public SaServletFilter getSaServletFilter() {
-    return new SaServletFilter()
-        .addInclude("/**")
-        .addExclude("/favicon.ico")
-        .setAuth(
-            obj -> {
-              // 校验 Id-Token 身份凭证     —— 以下两句代码可简化为：SaIdUtil.checkCurrentRequestToken();
-              SaIdUtil.checkCurrentRequestToken();
-            })
-        .setError(
-            e -> {
-              return SaResult.error(e.getMessage());
-            });
-  }
+//  @Bean
+//  public SaServletFilter getSaServletFilter() {
+//    return new SaServletFilter()
+//        .addInclude("/**")
+//        .addExclude("/favicon.ico")
+//        .setAuth(
+//            obj -> {
+//              // 校验 Id-Token 身份凭证     —— 以下两句代码可简化为：SaIdUtil.checkCurrentRequestToken();
+//              SaIdUtil.checkCurrentRequestToken();
+//            })
+//        .setError(
+//            e -> {
+//              return SaResult.error(e.getMessage());
+//            });
+//  }
 
   // Sa-Token 整合 jwt (Simple 简单模式)
   @Bean
