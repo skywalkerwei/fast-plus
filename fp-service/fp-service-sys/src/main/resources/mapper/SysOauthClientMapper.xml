@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imguo.service.sys.mapper.SysOauthClientMapper">
+
+    <resultMap id="BaseResultMap" type="com.imguo.model.sys.domain.SysOauthClient">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="client_id" column="client_id" jdbcType="VARCHAR"/>
+            <result property="client_secret" column="client_secret" jdbcType="VARCHAR"/>
+            <result property="resource_ids" column="resource_ids" jdbcType="VARCHAR"/>
+            <result property="scope" column="scope" jdbcType="VARCHAR"/>
+            <result property="authorized_grant_types" column="authorized_grant_types" jdbcType="VARCHAR"/>
+            <result property="web_server_redirect_uri" column="web_server_redirect_uri" jdbcType="VARCHAR"/>
+            <result property="authorities" column="authorities" jdbcType="VARCHAR"/>
+            <result property="access_token_validity" column="access_token_validity" jdbcType="INTEGER"/>
+            <result property="refresh_token_validity" column="refresh_token_validity" jdbcType="INTEGER"/>
+            <result property="additional_information" column="additional_information" jdbcType="VARCHAR"/>
+            <result property="autoapprove" column="autoapprove" jdbcType="VARCHAR"/>
+            <result property="version" column="version" jdbcType="INTEGER"/>
+            <result property="deleted" column="deleted" jdbcType="TINYINT"/>
+            <result property="creator" column="creator" jdbcType="BIGINT"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updater" column="updater" jdbcType="BIGINT"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,client_id,client_secret,
+        resource_ids,scope,authorized_grant_types,
+        web_server_redirect_uri,authorities,access_token_validity,
+        refresh_token_validity,additional_information,autoapprove,
+        version,deleted,creator,
+        create_time,updater,update_time
+    </sql>
+</mapper>

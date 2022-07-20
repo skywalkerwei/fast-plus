@@ -28,7 +28,6 @@
         <kaptcha.version>2.3.2</kaptcha.version>
         <aliyun-oss.version>3.9.1</aliyun-oss.version>
         <mybatis-plus.version>3.5.1</mybatis-plus.version>
-        <swagger.core.version>1.5.22</swagger.core.version>
         <knife4j.version>3.0.3</knife4j.version>
         <springdoc.version>1.6.8</springdoc.version>
         <mysql.connector.version>8.0.16</mysql.connector.version>
@@ -174,11 +173,6 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.connector.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.swagger</groupId>
-                <artifactId>swagger-annotations</artifactId>
-                <version>${swagger.core.version}</version>
             </dependency>
             <!--TTL-->
             <dependency>

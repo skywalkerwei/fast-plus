@@ -1,7 +1,7 @@
 package com.imguo.common.core.entity;
 
 import com.imguo.common.core.constant.CommonConstants;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import lombok.experimental.Accessors;
 
@@ -20,17 +20,17 @@ public class Result<T> implements Serializable {
 
   @Getter
   @Setter
-  @ApiModelProperty(value = "返回标记：成功=0，失败=-1")
+  @Schema(description = "返回标记：成功=0，失败=-1")
   private int code;
 
   @Getter
   @Setter
-  @ApiModelProperty(value = "返回信息")
+  @Schema(description = "返回信息")
   private String msg;
 
   @Getter
   @Setter
-  @ApiModelProperty(value = "数据")
+  @Schema(description = "数据")
   private T data;
 
   public Boolean isOk() {

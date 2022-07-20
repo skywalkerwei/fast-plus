@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imguo.service.sys.mapper.SysDictTypeMapper">
+
+    <resultMap id="BaseResultMap" type="com.imguo.model.sys.domain.SysDictType">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="dict_type" column="dict_type" jdbcType="VARCHAR"/>
+            <result property="dict_name" column="dict_name" jdbcType="VARCHAR"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+            <result property="sort" column="sort" jdbcType="INTEGER"/>
+            <result property="version" column="version" jdbcType="INTEGER"/>
+            <result property="deleted" column="deleted" jdbcType="TINYINT"/>
+            <result property="creator" column="creator" jdbcType="BIGINT"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updater" column="updater" jdbcType="BIGINT"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,dict_type,dict_name,
+        remark,sort,version,
+        deleted,creator,create_time,
+        updater,update_time
+    </sql>
+</mapper>

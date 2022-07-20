@@ -30,10 +30,23 @@ public class TokenController {
             SaTokenInfo tokenInfo = StpUtil.getTokenInfo();
             List<String> list = new ArrayList<String>();
             list.add("admin");
-            list.add("super-admin");
-            StpUtil.getSession().set(CacheConstants.ROLE_CACHE, JSONUtil.toJsonStr(list));
+//            String  loginIdKey = CacheConstants.ROLE_CACHE + "10001";
+            String  loginIdKey = CacheConstants.ROLE_CACHE ; ;
+            StpUtil.getSession().set(loginIdKey, JSONUtil.toJsonStr(list));
             return  Result.success(tokenInfo);
         }
+
+        if("hw".equals(username) && "123456".equals(password)) {
+            StpUtil.login(10002);
+            SaTokenInfo tokenInfo = StpUtil.getTokenInfo();
+            List<String> list = new ArrayList<String>();
+            list.add("super-admin");
+//            String  loginIdKey = CacheConstants.ROLE_CACHE + "10002";
+            String  loginIdKey = CacheConstants.ROLE_CACHE ;
+            StpUtil.getSession().set(loginIdKey, JSONUtil.toJsonStr(list));
+            return  Result.success(tokenInfo);
+        }
+
         return  Result.fail("用户名或密码错误");
 
     }
@@ -70,6 +83,12 @@ public class TokenController {
     @RequestMapping("me2")
     @SaCheckRole("admin")
     public Result<SaTokenInfo> me2() {
+        return   Result.success(StpUtil.getTokenInfo());
+    }
+
+    @RequestMapping("me3")
+    @SaCheckRole("super-admin")
+    public Result<SaTokenInfo> m3() {
         return   Result.success(StpUtil.getTokenInfo());
     }
 
