@@ -1,13 +1,26 @@
 package com.imguo.service.sys.service;
 
-import com.imguo.model.sys.domain.SysDictData;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.imguo.common.core.page.PageResult;
+import com.imguo.model.common.service.BaseService;
+import com.imguo.model.sys.entity.SysDictDataEntity;
+import com.imguo.model.sys.query.SysDictDataQuery;
+import com.imguo.model.sys.vo.SysDictDataVO;
+
+
+import java.util.List;
 
 /**
-* @author wei
-* @description 针对表【sys_dict_data(字典数据)】的数据库操作Service
-* @createDate 2022-07-20 09:58:48
-*/
-public interface SysDictDataService extends IService<SysDictData> {
+ * 数据字典
+ *
+ */
+public interface SysDictDataService extends BaseService<SysDictDataEntity> {
+
+    PageResult<SysDictDataVO> page(SysDictDataQuery query);
+
+    void save(SysDictDataVO vo);
+
+    void update(SysDictDataVO vo);
+
+    void delete(List<Long> idList);
 
 }

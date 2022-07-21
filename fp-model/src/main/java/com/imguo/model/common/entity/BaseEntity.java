@@ -8,7 +8,6 @@ import java.util.Date;
 /**
  * Entity基类
  *
- * @author 阿沐 babamu@126.com
  */
 @Data
 public abstract class BaseEntity {
@@ -25,16 +24,16 @@ public abstract class BaseEntity {
     private Long  creator;
 
     /**
-     * 创建时间
-     */
-    @TableField(fill = FieldFill.INSERT)
-    private Date createTime;
-
-    /**
      * 更新者
      */
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private Long  updater;
+
+    /**
+     * 创建时间
+     */
+    @TableField(fill = FieldFill.INSERT)
+    private Date createTime;
 
     /**
      * 更新时间

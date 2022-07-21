@@ -1,13 +1,27 @@
 package com.imguo.service.sys.service;
 
-import com.imguo.model.sys.domain.SysRole;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.imguo.common.core.page.PageResult;
+import com.imguo.model.common.service.BaseService;
+import com.imguo.model.sys.entity.SysRoleEntity;
+import com.imguo.model.sys.query.SysRoleQuery;
+import com.imguo.model.sys.vo.SysRoleVO;
+
+import java.util.List;
 
 /**
-* @author wei
-* @description 针对表【sys_role(角色管理)】的数据库操作Service
-* @createDate 2022-07-20 09:58:48
-*/
-public interface SysRoleService extends IService<SysRole> {
+ * 角色
+ * 
+ * @author 阿沐 babamu@126.com
+ */
+public interface SysRoleService extends BaseService<SysRoleEntity> {
 
+	PageResult<SysRoleVO> page(SysRoleQuery query);
+
+	List<SysRoleVO> getList(SysRoleQuery query);
+
+	void save(SysRoleVO vo);
+
+	void update(SysRoleVO vo);
+
+	void delete(List<Long> idList);
 }

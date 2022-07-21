@@ -3,6 +3,7 @@ package com.imguo.model.sys.vo;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
+import com.imguo.common.core.util.DateUtils;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -13,7 +14,6 @@ import java.util.Date;
 /**
  * 字典数据
  *
- * @author 阿沐 babamu@126.com
  */
 @Data
 @Schema(description = "字典数据")
@@ -42,10 +42,10 @@ public class SysDictDataVO implements Serializable {
 	private Integer sort;
 
 	@Schema(description = "创建时间")
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern = DateUtils.DATE_TIME_PATTERN)
 	private Date createTime;
 
 	@Schema(description = "更新时间")
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern = DateUtils.DATE_TIME_PATTERN)
 	private Date updateTime;
 }

@@ -20,6 +20,10 @@
             <groupId>com.imguo</groupId>
             <artifactId>fp-common-nacos</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.imguo</groupId>
+            <artifactId>fp-common-security</artifactId>
+        </dependency>
         <!--注册中心客户端-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>

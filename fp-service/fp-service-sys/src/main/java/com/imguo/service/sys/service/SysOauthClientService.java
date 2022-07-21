@@ -1,13 +1,25 @@
 package com.imguo.service.sys.service;
 
-import com.imguo.model.sys.domain.SysOauthClient;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.imguo.common.core.page.PageResult;
+import com.imguo.model.common.query.Query;
+import com.imguo.model.common.service.BaseService;
+import com.imguo.model.sys.entity.SysOauthClientEntity;
+import com.imguo.model.sys.vo.SysOauthClientVO;
+
+import java.util.List;
 
 /**
-* @author wei
-* @description 针对表【sys_oauth_client(客户端管理)】的数据库操作Service
-* @createDate 2022-07-20 09:58:48
-*/
-public interface SysOauthClientService extends IService<SysOauthClient> {
+ * 客户端管理
+ *
+ * @author 阿沐 babamu@126.com
+ */
+public interface SysOauthClientService extends BaseService<SysOauthClientEntity> {
 
+    PageResult<SysOauthClientVO> page(Query query);
+
+    void save(SysOauthClientVO vo);
+
+    void update(SysOauthClientVO vo);
+
+    void delete(List<Long> idList);
 }

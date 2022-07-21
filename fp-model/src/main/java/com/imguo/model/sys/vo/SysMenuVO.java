@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
-import com.imguo.model.common.query.TreeNode;
+import com.imguo.common.core.util.DateUtils;
+import com.imguo.common.core.util.TreeNode;
 import org.hibernate.validator.constraints.Range;
 
 import javax.validation.constraints.Min;
@@ -15,6 +15,7 @@ import java.util.Date;
 /**
  * 菜单管理
  *
+ * @author 阿沐 babamu@126.com
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -47,7 +48,7 @@ public class SysMenuVO extends TreeNode<SysMenuVO> {
 	private Integer sort;
 
 	@Schema(description = "创建时间")
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern = DateUtils.DATE_TIME_PATTERN)
 	private Date createTime;
 
 	@Schema(description = "上级菜单名称")

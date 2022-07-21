@@ -1,13 +1,50 @@
 package com.imguo.service.sys.service;
 
-import com.imguo.model.sys.domain.SysMenu;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.imguo.model.common.service.BaseService;
+//import com.imguo.model..security.user.UserDetail;
+import com.imguo.model.sys.entity.SysMenuEntity;
+import com.imguo.model.sys.vo.SysMenuVO;
+
+import java.util.List;
+import java.util.Set;
+
 
 /**
-* @author wei
-* @description 针对表【sys_menu(菜单管理)】的数据库操作Service
-* @createDate 2022-07-20 09:58:48
-*/
-public interface SysMenuService extends IService<SysMenu> {
+ * 菜单管理
+ * 
+ * @author 阿沐 babamu@126.com
+ */
+public interface SysMenuService extends BaseService<SysMenuEntity> {
 
+	void save(SysMenuVO vo);
+
+	void update(SysMenuVO vo);
+
+	void delete(Long id);
+
+	/**
+	 * 菜单列表
+	 *
+	 * @param type 菜单类型
+	 */
+	List<SysMenuVO> getMenuList(Integer type);
+
+//	/**
+//	 * 用户菜单列表
+//	 *
+//	 * @param user  用户
+//	 * @param type 菜单类型
+//	 */
+//	List<SysMenuVO> getUserMenuList(UserDetail user, Integer type);
+
+	/**
+	 * 获取子菜单的数量
+	 * @param pid  父菜单ID
+	 */
+	Long getSubMenuCount(Long pid);
+
+//	/**
+//	 * 获取用户权限列表
+//	 */
+//	Set<String> getUserAuthority(UserDetail user);
 }

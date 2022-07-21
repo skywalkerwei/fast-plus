@@ -1,13 +1,27 @@
 package com.imguo.service.sys.service;
 
-import com.imguo.model.sys.domain.SysPost;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.imguo.common.core.page.PageResult;
+import com.imguo.model.common.service.BaseService;
+import com.imguo.model.sys.entity.SysPostEntity;
+import com.imguo.model.sys.query.SysPostQuery;
+import com.imguo.model.sys.vo.SysPostVO;
+
+import java.util.List;
 
 /**
-* @author wei
-* @description 针对表【sys_post(岗位管理)】的数据库操作Service
-* @createDate 2022-07-20 09:58:48
-*/
-public interface SysPostService extends IService<SysPost> {
+ * 岗位管理
+ *
+ * @author 阿沐 babamu@126.com
+ */
+public interface SysPostService extends BaseService<SysPostEntity> {
 
+    PageResult<SysPostVO> page(SysPostQuery query);
+
+    List<SysPostVO> getList();
+
+    void save(SysPostVO vo);
+
+    void update(SysPostVO vo);
+
+    void delete(List<Long> idList);
 }

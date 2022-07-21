@@ -1,15 +1,19 @@
 package com.imguo.auth.controller;
 
+import cn.dev33.satoken.SaManager;
 import cn.dev33.satoken.annotation.SaCheckLogin;
 import cn.dev33.satoken.annotation.SaCheckRole;
+import cn.dev33.satoken.jwt.StpLogicJwtForSimple;
 import cn.dev33.satoken.stp.SaTokenInfo;
 import cn.dev33.satoken.stp.StpUtil;
 
 import cn.hutool.json.JSONUtil;
 import com.imguo.common.core.constant.CacheConstants;
 import com.imguo.common.core.entity.Result;
+import com.imguo.common.security.at.StpUserUtil;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,6 +24,12 @@ import java.util.List;
 @AllArgsConstructor
 @RestController
 public class TokenController {
+
+//    @Autowired
+//    public void setUserStpLogic() {
+//        StpUserUtil.stpLogic = new StpLogicJwtForSimple(StpUserUtil.TYPE);
+//        SaManager.putStpLogic(StpUserUtil.stpLogic);
+//    }
 
     // 测试登录，浏览器访问： http://localhost:8081/doLogin?username=zhang&password=123456
     @RequestMapping("doLogin")
@@ -44,6 +54,17 @@ public class TokenController {
 //            String  loginIdKey = CacheConstants.ROLE_CACHE + "10002";
             String  loginIdKey = CacheConstants.ROLE_CACHE ;
             StpUtil.getSession().set(loginIdKey, JSONUtil.toJsonStr(list));
+            return  Result.success(tokenInfo);
+        }
+
+        if("kyle".equals(username) && "123456".equals(password)) {
+            StpUserUtil.login(10003);
+            SaTokenInfo tokenInfo = StpUserUtil.getTokenInfo();
+            List<String> list = new ArrayList<String>();
+            list.add("admin");
+//            String  loginIdKey = CacheConstants.ROLE_CACHE + "10002";
+            String  loginIdKey = CacheConstants.ROLE_CACHE ;
+            StpUserUtil.getSession().set(loginIdKey, JSONUtil.toJsonStr(list));
             return  Result.success(tokenInfo);
         }
 
@@ -92,6 +113,12 @@ public class TokenController {
         return   Result.success(StpUtil.getTokenInfo());
     }
 
+
+    @RequestMapping("me4")
+    @SaCheckLogin(type = "user")
+    public Result<SaTokenInfo> m4() {
+        return   Result.success(StpUserUtil.getTokenInfo());
+    }
 
 
 }

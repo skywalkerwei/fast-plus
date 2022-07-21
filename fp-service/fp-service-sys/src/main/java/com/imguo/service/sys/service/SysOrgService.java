@@ -1,13 +1,29 @@
 package com.imguo.service.sys.service;
 
-import com.imguo.model.sys.domain.SysOrg;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.imguo.model.common.service.BaseService;
+import com.imguo.model.sys.entity.SysOrgEntity;
+import com.imguo.model.sys.vo.SysOrgVO;
+
+import java.util.List;
 
 /**
-* @author wei
-* @description 针对表【sys_org(机构管理)】的数据库操作Service
-* @createDate 2022-07-20 09:58:48
-*/
-public interface SysOrgService extends IService<SysOrg> {
+ * 机构管理
+ * 
+ * @author 阿沐 babamu@126.com
+ */
+public interface SysOrgService extends BaseService<SysOrgEntity> {
 
+	List<SysOrgVO> getList();
+
+	void save(SysOrgVO vo);
+
+	void update(SysOrgVO vo);
+
+	void delete(Long id);
+
+	/**
+	 * 根据机构ID，获取子机构ID列表(包含本机构ID)
+	 * @param id   机构ID
+	 */
+	List<Long> getSubOrgIdList(Long id);
 }

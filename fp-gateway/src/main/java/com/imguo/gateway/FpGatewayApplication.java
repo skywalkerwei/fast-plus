@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * 网关模块
- *
  */
 @SpringBootApplication
 public class FpGatewayApplication {

@@ -1,20 +1,19 @@
 package com.imguo.common.security.config;
 
-import cn.dev33.satoken.filter.SaServletFilter;
-import cn.dev33.satoken.id.SaIdUtil;
 import cn.dev33.satoken.interceptor.SaAnnotationInterceptor;
 import cn.dev33.satoken.jwt.StpLogicJwtForSimple;
 import cn.dev33.satoken.stp.StpLogic;
-import cn.dev33.satoken.util.SaResult;
+import cn.dev33.satoken.strategy.SaStrategy;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.AnnotatedElementUtils;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * 注解鉴权
- *
  */
 @Slf4j
 @Configuration
@@ -24,6 +23,14 @@ public class SaTokenConfigure implements WebMvcConfigurer {
   public void addInterceptors(InterceptorRegistry registry) {
     // 注册注解拦截器，并排除不需要注解鉴权的接口地址 (与登录拦截器无关)
     registry.addInterceptor(new SaAnnotationInterceptor()).addPathPatterns("/**");
+  }
+
+  @Autowired
+  public void rewriteSaStrategy() {
+    // 重写Sa-Token的注解处理器，增加注解合并功能
+    SaStrategy.me.getAnnotation = (element, annotationClass) -> {
+      return AnnotatedElementUtils.getMergedAnnotation(element, annotationClass);
+    };
   }
 
 //  @Bean
@@ -47,4 +54,17 @@ public class SaTokenConfigure implements WebMvcConfigurer {
   public StpLogic getStpLogicJwt() {
     return new StpLogicJwtForSimple();
   }
+
+  /**
+   * 重写 Sa-Token 框架内部算法策略
+   */
+//  @Autowired
+//  public void rewriteSaStrategy() {
+//    // 重写Sa-Token的注解处理器，增加注解合并功能
+//    SaStrategy.me.getAnnotation = (element, annotationClass) -> {
+//      return AnnotatedElementUtils.getMergedAnnotation(element, annotationClass);
+//    };
+//  }
+
+
 }

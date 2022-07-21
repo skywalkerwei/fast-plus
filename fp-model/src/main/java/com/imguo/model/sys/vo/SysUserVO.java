@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-
+import com.imguo.common.core.util.DateUtils;
 import org.hibernate.validator.constraints.Range;
 
 import javax.validation.constraints.Email;
@@ -17,7 +17,6 @@ import java.util.List;
 /**
  * 用户
  *
- * @author 阿沐 babamu@126.com
  */
 @Data
 @Schema(description = "用户")
@@ -75,6 +74,6 @@ public class SysUserVO implements Serializable {
     private String orgName;
 
     @Schema(description = "创建时间")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = DateUtils.DATE_TIME_PATTERN)
     private Date createTime;
 }

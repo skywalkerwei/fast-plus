@@ -1,13 +1,39 @@
 package com.imguo.service.sys.service;
 
-import com.imguo.model.sys.domain.SysUserPost;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.imguo.model.common.service.BaseService;
+import com.imguo.model.sys.entity.SysUserPostEntity;
+
+import java.util.List;
 
 /**
-* @author wei
-* @description 针对表【sys_user_post(用户岗位关系)】的数据库操作Service
-* @createDate 2022-07-20 09:58:48
-*/
-public interface SysUserPostService extends IService<SysUserPost> {
+ * 用户岗位关系
+ *
+ * @author 阿沐 babamu@126.com
+ */
+public interface SysUserPostService extends BaseService<SysUserPostEntity> {
 
+    /**
+     * 保存或修改
+     * @param userId      用户ID
+     * @param postIdList  岗位ID列表
+     */
+    void saveOrUpdate(Long userId, List<Long> postIdList);
+
+    /**
+     * 根据岗位id列表，删除用户岗位关系
+     * @param postIdList 岗位id列表
+     */
+    void deleteByPostIdList(List<Long> postIdList);
+
+    /**
+     * 根据用户id列表，删除用户岗位关系
+     * @param userIdList 用户id列表
+     */
+    void deleteByUserIdList(List<Long> userIdList);
+
+    /**
+     * 岗位ID列表
+     * @param userId  用户ID
+     */
+    List<Long> getPostIdList(Long userId);
 }

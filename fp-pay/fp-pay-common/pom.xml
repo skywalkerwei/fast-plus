@@ -25,7 +25,7 @@
             <groupId>com.imguo</groupId>
             <artifactId>fp-common-mybatis</artifactId>
         </dependency>
-        <!--           wxjava 支付-->
+        <!--      wxjava 支付-->
         <dependency>
             <groupId>com.github.binarywang</groupId>
             <artifactId>weixin-java-pay</artifactId>
