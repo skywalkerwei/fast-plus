@@ -19,6 +19,7 @@
         <module>fp-common-log</module>
         <module>fp-common-job</module>
         <module>fp-common-nacos</module>
+        <module>fp-common-feign</module>
     </modules>
 
 </project>

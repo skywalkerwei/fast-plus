@@ -10,17 +10,12 @@ import java.util.List;
 /**
  * 实现WebMvcConfigurer接口
  *
- * @author lijx
- * @date 2022/6/10
  */
 @Configuration
 public class FpWebMvcConfigurer implements WebMvcConfigurer {
 
   /**
    * 该方法作用在调用Controller方法的参数传入之前
-   *
-   * @author lijx
-   * @date 2022/6/10
    */
   @Override
   public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {

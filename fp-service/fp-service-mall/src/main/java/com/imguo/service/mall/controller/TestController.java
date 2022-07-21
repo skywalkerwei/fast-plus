@@ -1,7 +1,7 @@
 package com.imguo.service.mall.controller;
 
-import com.imguo.model.mall.domain.Mall;
-import com.imguo.model.mall.dto.TestQuery;
+import com.imguo.model.mall.entity.Mall;
+import com.imguo.model.mall.query.TestQuery;
 import com.imguo.service.mall.service.MallService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

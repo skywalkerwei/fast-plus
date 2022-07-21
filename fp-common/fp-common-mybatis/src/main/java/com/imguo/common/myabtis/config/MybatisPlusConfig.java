@@ -12,11 +12,9 @@ import org.springframework.context.annotation.Configuration;
 /**
  * mybatis plus 统一配置
  *
- * @author lijx
- * @since 2022/2/15 15:48
  */
 @Configuration
-@MapperScan("com.imguo.service.*.mapper")
+@MapperScan("com.imguo.service.*.dao")
 public class MybatisPlusConfig {
   /**
    * 使用多个功能需要注意顺序关系,建议使用如下顺序

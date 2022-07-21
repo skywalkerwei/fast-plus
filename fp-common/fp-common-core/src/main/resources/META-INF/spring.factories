@@ -1,3 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
     com.imguo.common.core.exception.FastExceptionHandler,\
-  com.imguo.common.core.config.DateFormatConfig
+  com.imguo.common.core.config.DateFormatConfig,\
+  com.imguo.common.core.config.PasswordConfig

@@ -14,10 +14,6 @@ public class FileUtils {
   /**
    * 将MultipartFile转为File
    *
-   * @author lijx
-   * @date 2022/6/10
-   * @param mulFile
-   * @return: java.io.File
    */
   public static File multipartFileToFile(MultipartFile mulFile) throws IOException {
     InputStream ins = mulFile.getInputStream();
