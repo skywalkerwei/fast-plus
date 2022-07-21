@@ -16,8 +16,6 @@ import java.util.UUID;
 /**
  * 七牛云文件上传
  *
- * @author lijx
- * @date 2022/6/10
  */
 @AllArgsConstructor
 public class QiNiuCloudUtils {

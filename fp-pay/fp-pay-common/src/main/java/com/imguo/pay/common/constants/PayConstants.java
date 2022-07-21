@@ -3,8 +3,6 @@ package com.imguo.pay.common.constants;
 /**
  * 支付常量
  *
- * @author lijx
- * @since 2022/3/7 14:01
  */
 public class PayConstants {
 

@@ -8,9 +8,6 @@ import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.type.AnnotationMetadata;
 /**
  * 根据注解值动态注入xxlJob配置
- *
- * @author lijx
- * @date 2022/6/2
  */
 public class FpBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
 

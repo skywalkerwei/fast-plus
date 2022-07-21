@@ -16,8 +16,6 @@ import java.time.LocalDateTime;
 /**
  * 支付配置
  *
- * @author lijx
- * @since 2022/3/18 10:07
  */
 @Data
 @Schema(description = "支付配置")

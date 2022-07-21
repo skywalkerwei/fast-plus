@@ -8,11 +8,7 @@ import com.imguo.service.mall.mapper.MallMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
-* @author wei
-* @description 针对表【mall(店铺)】的数据库操作Service实现
-* @createDate 2022-07-06 14:16:47
-*/
+
 @Service
 public class MallServiceImpl extends ServiceImpl<MallMapper, Mall>
 implements MallService{

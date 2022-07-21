@@ -43,7 +43,7 @@ public class DateFormatConfig {
     /**
      * java 8 时间序列化
      *
-     * @author lijx
+     * 
      * @since 2022/5/20 17:54
      */
     static class JavaTimeModule extends SimpleModule {

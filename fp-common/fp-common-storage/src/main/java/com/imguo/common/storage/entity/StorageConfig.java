@@ -4,7 +4,7 @@ import lombok.Data;
 /**
  * 文件存储配置
  *
- * @author lijx
+ * 
  * @date 2022/6/10
  */
 @Data

@@ -11,7 +11,6 @@ import java.util.List;
 /**
  * 客户端管理
  *
- * @author 阿沐 babamu@126.com
  */
 public interface SysOauthClientService extends BaseService<SysOauthClientEntity> {
 

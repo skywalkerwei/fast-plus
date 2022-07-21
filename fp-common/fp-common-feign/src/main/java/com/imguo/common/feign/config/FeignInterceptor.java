@@ -15,7 +15,7 @@ public class FeignInterceptor implements RequestInterceptor {
   /**
    * 为 Feign 的 RCP调用 添加请求头Id-Token
    *
-   * @author lijx
+   * 
    * @date 2022/6/28
    * @param requestTemplate
    * @return: void

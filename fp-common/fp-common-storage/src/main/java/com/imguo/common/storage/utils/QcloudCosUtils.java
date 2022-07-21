@@ -22,8 +22,6 @@ import java.util.concurrent.Executors;
 /**
  * 腾讯云文件上传
  *
- * @author lijx
- * @date 2022/6/10
  */
 @AllArgsConstructor
 public class QcloudCosUtils {

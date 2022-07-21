@@ -12,7 +12,6 @@ import cn.dev33.satoken.stp.StpUtil;
 
 /**
  * Sa-Token 权限认证工具类 (user版)
- * @author kong 
  */
 public class StpUserUtil {
 	

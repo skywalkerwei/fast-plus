@@ -13,7 +13,7 @@ public class SnowflakeIdUtils {
   /**
    * @name: orderNo
    * @description 订单编号
-   * @author lijx
+   * 
    * @date 2022/3/14 16:24
    * @return: java.lang.String
    */
@@ -24,7 +24,7 @@ public class SnowflakeIdUtils {
    * @description: 活动期号
    * @param: str filledChar len
    * @return: java.lang.String
-   * @author lijx
+   * 
    * @date: 2022/6/1 20:53
    */
   public static String periodNo(String str, char filledChar, int len) {

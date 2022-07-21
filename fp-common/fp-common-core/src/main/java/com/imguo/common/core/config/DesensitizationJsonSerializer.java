@@ -56,7 +56,7 @@ public class DesensitizationJsonSerializer extends JsonSerializer<String>
   /**
    * 设置脱敏
    *
-   * @author lijx
+   * 
    * @date 2022/5/31
    */
   private JsonSerializer<?> setDesensitization(

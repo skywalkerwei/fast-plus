@@ -35,7 +35,7 @@ public class FileUtils {
   /**
    * 获取文件扩展名
    *
-   * @author lijx
+   * 
    * @date 2022/6/10
    * @param filename
    * @return: java.lang.String
@@ -53,7 +53,7 @@ public class FileUtils {
   /**
    * 获取文件名前缀
    *
-   * @author lijx
+   * 
    * @date 2022/6/10
    * @param filename
    * @return: java.lang.String
@@ -70,7 +70,7 @@ public class FileUtils {
   /**
    * 删除本地临时文件
    *
-   * @author lijx
+   * 
    * @date 2022/6/10
    * @param file
    * @return: void

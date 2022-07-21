@@ -7,8 +7,6 @@ import org.springframework.context.annotation.Bean;
 /**
  * xxlJob调度任务配置
  *
- * @author lijx
- * @date 2022/6/2
  */
 @AllArgsConstructor
 public class XxlJobConfig {

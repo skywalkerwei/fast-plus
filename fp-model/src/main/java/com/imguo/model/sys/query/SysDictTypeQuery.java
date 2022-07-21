@@ -7,8 +7,6 @@ import com.imguo.model.common.query.Query;
 
 /**
  * 字典类型
- *
- * @author 阿沐 babamu@126.com
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

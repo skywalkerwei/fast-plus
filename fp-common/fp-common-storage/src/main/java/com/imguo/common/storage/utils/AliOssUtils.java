@@ -13,7 +13,7 @@ import java.util.UUID;
 /**
  * 阿里文件上传
  *
- * @author lijx
+ * 
  * @date 2022/6/10
  */
 @AllArgsConstructor

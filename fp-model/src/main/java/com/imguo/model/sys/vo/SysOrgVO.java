@@ -14,7 +14,6 @@ import java.util.Date;
 /**
  * 机构列表
  *
- * @author 阿沐 babamu@126.com
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

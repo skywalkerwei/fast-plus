@@ -8,7 +8,7 @@ public abstract class AbstractDesensitization {
   /**
    * 脱敏
    *
-   * @author lijx
+   * 
    * @date 2022/5/31
    * @param value
    * @return: java.lang.String

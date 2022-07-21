@@ -27,7 +27,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * AOP实现日志
  *
- * @author lijx
+ * 
  * @since 2022/2/17 9:27
  */
 @Slf4j
@@ -41,7 +41,7 @@ public class LogAopAspect {
   /**
    * 环绕通知记录日志通过注解匹配到需要增加日志功能的方法
    *
-   * @author lijx
+   * 
    * @since 2022/2/17 9:28
    */
   @SneakyThrows

@@ -32,7 +32,7 @@ public class NacosUtils {
   /**
    * 获取配置信息
    *
-   * @author lijx
+   * 
    * @date 2022/6/13
    * @param dataId
    * @param groupId

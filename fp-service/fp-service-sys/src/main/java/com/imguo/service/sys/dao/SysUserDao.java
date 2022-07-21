@@ -13,8 +13,7 @@ import java.util.Map;
 
 /**
  * 系统用户
- * 
- * @author 阿沐 babamu@126.com
+ *
  */
 @Mapper
 public interface SysUserDao extends BaseDao<SysUserEntity> {
