@@ -20,6 +20,7 @@
         <module>fp-common-job</module>
         <module>fp-common-nacos</module>
         <module>fp-common-feign</module>
+        <module>fp-common-web3</module>
     </modules>
 
 </project>
