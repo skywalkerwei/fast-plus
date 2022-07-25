@@ -37,8 +37,30 @@
         <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
         <sa-token.version>1.30.0</sa-token.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <projectlombok.version>1.18.24</projectlombok.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-jdk8</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bootstrap</artifactId>
@@ -51,18 +73,26 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-client</artifactId>
-            <version>${spring-boot-admin.version}</version>
-        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-jdk8</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+
          <!-- 核心模块-->
             <dependency>
                 <groupId>com.imguo</groupId>
@@ -124,59 +154,11 @@
                 <version>${project.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.mapstruct</groupId>
-                <artifactId>mapstruct</artifactId>
-                <version>${mapstruct.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.mapstruct</groupId>
-                <artifactId>mapstruct-jdk8</artifactId>
-                <version>${mapstruct.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.mapstruct</groupId>
-                <artifactId>mapstruct-processor</artifactId>
-                <version>${mapstruct.version}</version>
-            </dependency>
 
-            <!--           支付公共模块-->
-            <!-- <dependency>
-                <groupId>com.imguo</groupId>
-                <artifactId>fp-pay-common</artifactId>
-                <version>${project.version}</version>
-            </dependency> -->
-            <!--           微信服务公共模块-->
-            <!-- <dependency>
-                <groupId>com.imguo</groupId>
-                <artifactId>fp-miniapp-common</artifactId>
-                <version>${project.version}</version>
-            </dependency> -->
-          
-            <!--            权限系统管理模块-->
-            <!-- <dependency>
-                <groupId>com.imguo</groupId>
-                <artifactId>fp-upms-admin</artifactId>
-                <version>${project.version}</version>
-            </dependency> -->
-            <!--            权限系统公共模块-->
-            <!-- <dependency>
-                <groupId>com.imguo</groupId>
-                <artifactId>fp-upms-common</artifactId>
-                <version>${project.version}</version>
-            </dependency> -->
-            <!--            商城公共模块-->
-            <!-- <dependency>
-                <groupId>com.imguo</groupId>
-                <artifactId>fp-mall-common</artifactId>
-                <version>${project.version}</version>
-            </dependency> -->
-
-          
             <dependency>
-                <groupId>com.github.penggle</groupId>
-                <artifactId>kaptcha</artifactId>
-                <version>${kaptcha.version}</version>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring-boot-admin.version}</version>
             </dependency>
 
             <!-- 数据库 连接池 -->

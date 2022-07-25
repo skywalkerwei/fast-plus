@@ -1,4 +1,4 @@
-package com.imguo.common.security.at;
+package com.imguo.common.security.at.user;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

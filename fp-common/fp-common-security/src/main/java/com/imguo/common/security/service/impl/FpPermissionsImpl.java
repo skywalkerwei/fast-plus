@@ -23,7 +23,7 @@ public class FpPermissionsImpl implements StpInterface {
   @Override
   public List<String> getPermissionList(Object loginId, String loginType) {
     // 返回此 loginId 拥有的权限列表
-    String  loginIdKey = CacheConstants.MENU_CACHE + loginId.toString() ;
+    String  loginIdKey = CacheConstants.MENU_CACHE;
     return ObjectUtil.isNotNull(StpUtil.getSession().get(loginIdKey))
         ? JSONUtil.parseArray(StpUtil.getSession().get(loginIdKey))
             .toList(String.class)

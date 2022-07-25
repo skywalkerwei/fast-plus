@@ -68,8 +68,15 @@
             <artifactId>fp-common-redis</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.imguo</groupId>
+            <artifactId>fp-model</artifactId>
+        </dependency>
 
-
+        <dependency>
+            <groupId>com.imguo</groupId>
+            <artifactId>fp-feign</artifactId>
+        </dependency>
 
     </dependencies>
 

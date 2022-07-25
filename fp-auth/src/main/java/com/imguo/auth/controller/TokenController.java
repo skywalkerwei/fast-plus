@@ -1,20 +1,17 @@
 package com.imguo.auth.controller;
 
-import cn.dev33.satoken.SaManager;
-import cn.dev33.satoken.annotation.SaCheckLogin;
-import cn.dev33.satoken.annotation.SaCheckRole;
-import cn.dev33.satoken.jwt.StpLogicJwtForSimple;
-import cn.dev33.satoken.stp.SaTokenInfo;
-import cn.dev33.satoken.stp.StpUtil;
 
-import cn.hutool.json.JSONUtil;
-import com.imguo.common.core.constant.CacheConstants;
 import com.imguo.common.core.entity.Result;
-import com.imguo.common.security.at.StpUserUtil;
+import com.imguo.common.security.at.sys.SaSysCheckLogin;
+import com.imguo.common.security.at.sys.SaSysCheckPermission;
+import com.imguo.common.security.at.sys.SaSysCheckRole;
+import com.imguo.common.security.util.SecuritySysUtils;
+import com.imguo.common.security.util.UserDetail;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -23,49 +20,21 @@ import java.util.List;
 @Slf4j
 @AllArgsConstructor
 @RestController
+@Tag(name="测试")
 public class TokenController {
 
-//    @Autowired
-//    public void setUserStpLogic() {
-//        StpUserUtil.stpLogic = new StpLogicJwtForSimple(StpUserUtil.TYPE);
-//        SaManager.putStpLogic(StpUserUtil.stpLogic);
-//    }
 
     // 测试登录，浏览器访问： http://localhost:8081/doLogin?username=zhang&password=123456
-    @RequestMapping("doLogin")
-    public Result<SaTokenInfo> doLogin(String username, String password) {
+    @PostMapping("doLogin")
+    public Result<UserDetail> doLogin(String username, String password) {
         // 此处仅作模拟示例，真实项目需要从数据库中查询数据进行比对
         if("zhang".equals(username) && "123456".equals(password)) {
-            StpUtil.login(10001);
-            SaTokenInfo tokenInfo = StpUtil.getTokenInfo();
+
+            UserDetail detail =  SecuritySysUtils.Login(10001);
             List<String> list = new ArrayList<String>();
             list.add("admin");
-//            String  loginIdKey = CacheConstants.ROLE_CACHE + "10001";
-            String  loginIdKey = CacheConstants.ROLE_CACHE ; ;
-            StpUtil.getSession().set(loginIdKey, JSONUtil.toJsonStr(list));
-            return  Result.success(tokenInfo);
-        }
-
-        if("hw".equals(username) && "123456".equals(password)) {
-            StpUtil.login(10002);
-            SaTokenInfo tokenInfo = StpUtil.getTokenInfo();
-            List<String> list = new ArrayList<String>();
-            list.add("super-admin");
-//            String  loginIdKey = CacheConstants.ROLE_CACHE + "10002";
-            String  loginIdKey = CacheConstants.ROLE_CACHE ;
-            StpUtil.getSession().set(loginIdKey, JSONUtil.toJsonStr(list));
-            return  Result.success(tokenInfo);
-        }
-
-        if("kyle".equals(username) && "123456".equals(password)) {
-            StpUserUtil.login(10003);
-            SaTokenInfo tokenInfo = StpUserUtil.getTokenInfo();
-            List<String> list = new ArrayList<String>();
-            list.add("admin");
-//            String  loginIdKey = CacheConstants.ROLE_CACHE + "10002";
-            String  loginIdKey = CacheConstants.ROLE_CACHE ;
-            StpUserUtil.getSession().set(loginIdKey, JSONUtil.toJsonStr(list));
-            return  Result.success(tokenInfo);
+            SecuritySysUtils.SetRole(list);
+            return  Result.success(detail);
         }
 
         return  Result.fail("用户名或密码错误");
@@ -73,52 +42,44 @@ public class TokenController {
     }
 
     // 查询登录状态，浏览器访问： http://localhost:8081/isLogin
-    @RequestMapping("isLogin")
+    @GetMapping("isLogin")
     public String isLogin() {
-        log.info(StpUtil.getTokenInfo().toString());
-        log.info(StpUtil.getRoleList().toString());
-        return "当前会话是否登录：" + StpUtil.isLogin();
+        return "当前会话是否登录：" + SecuritySysUtils.isLogin();
     }
 
     // 查询登录状态，浏览器访问： http://localhost:8081/logout
     // 当前会话注销登录
-    @RequestMapping("logout")
+    @GetMapping("logout")
     public String logout() {
-        StpUtil.logout();
+        SecuritySysUtils.Logout();
         return "当前会话注销：成功！";
     }
 
     // 当前会话注销登录
-    @RequestMapping("kickout")
+    @GetMapping("kickout")
     public String kickout() {
-        StpUtil.kickout(10001);
+        SecuritySysUtils.kickout();
         return "当前会话注销：成功！";
     }
 
-    @RequestMapping("me")
-    @SaCheckLogin
-    public Result<SaTokenInfo> me() {
-        return   Result.success(StpUtil.getTokenInfo());
+    @GetMapping("me")
+    @SaSysCheckLogin
+    public Result<UserDetail> me() {
+        return   Result.success(SecuritySysUtils.getInfo());
     }
 
-    @RequestMapping("me2")
-    @SaCheckRole("admin")
-    public Result<SaTokenInfo> me2() {
-        return   Result.success(StpUtil.getTokenInfo());
+    @GetMapping("me2")
+    @SaSysCheckRole("admin")
+    public Result<UserDetail> me2() {
+        return   Result.success(SecuritySysUtils.getInfo());
     }
 
-    @RequestMapping("me3")
-    @SaCheckRole("super-admin")
-    public Result<SaTokenInfo> m3() {
-        return   Result.success(StpUtil.getTokenInfo());
+    @GetMapping("me3")
+    @SaSysCheckPermission("super-admin")
+    public Result<UserDetail> m3() {
+        return   Result.success(SecuritySysUtils.getInfo());
     }
 
-
-    @RequestMapping("me4")
-    @SaCheckLogin(type = "user")
-    public Result<SaTokenInfo> m4() {
-        return   Result.success(StpUserUtil.getTokenInfo());
-    }
 
 
 }

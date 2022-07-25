@@ -5,9 +5,10 @@ import cn.dev33.satoken.annotation.SaCheckPermission;
 import cn.hutool.core.util.StrUtil;
 import com.imguo.common.core.entity.Result;
 import com.imguo.common.core.page.PageResult;
-import com.imguo.common.security.util.SecurityUtils;
+import com.imguo.common.security.util.SecuritySysUtils;
 import com.imguo.model.sys.convert.SysUserConvert;
 import com.imguo.model.sys.entity.SysUserEntity;
+import com.imguo.model.sys.query.SysLoginQuery;
 import com.imguo.model.sys.query.SysUserQuery;
 import com.imguo.model.sys.vo.SysUserPasswordVO;
 import com.imguo.model.sys.vo.SysUserVO;
@@ -65,7 +66,7 @@ public class SysUserController {
     @GetMapping("info")
     @Operation(summary = "登录用户")
     public Result<SysUserVO> info(){
-        long uid =     SecurityUtils.getSysUserId();
+        long uid =     SecuritySysUtils.getInfo().getUid();
         SysUserEntity entity = sysUserService.getById(uid);
         SysUserVO vo = SysUserConvert.INSTANCE.convert(entity);
         // 用户角色列表
@@ -80,7 +81,7 @@ public class SysUserController {
     @PutMapping("password")
     @Operation(summary = "修改密码")
     public Result<String> password(@RequestBody @Valid SysUserPasswordVO vo){
-        long uid =     SecurityUtils.getSysUserId();
+        long uid =     SecuritySysUtils.getInfo().getUid();
         SysUserEntity user = sysUserService.getById(uid);
 
         if(!passwordEncoder.matches(vo.getPassword(), user.getPassword())){
@@ -88,7 +89,6 @@ public class SysUserController {
         }
         // 修改密码
         sysUserService.updatePassword(user.getId(), passwordEncoder.encode(vo.getNewPassword()));
-
         return Result.success();
     }
 
@@ -98,10 +98,8 @@ public class SysUserController {
     public Result<String> save(@RequestBody @Valid SysUserVO vo){
         // 密码加密
         vo.setPassword(passwordEncoder.encode(vo.getPassword()));
-
         // 保存
         sysUserService.save(vo);
-
         return Result.success();
     }
 
@@ -123,13 +121,38 @@ public class SysUserController {
     @Operation(summary = "删除")
     @SaCheckPermission("sys:user:delete")
     public Result<String> delete(@RequestBody List<Long> idList){
-        Long userId =  SecurityUtils.getSysUserId();
-        if(idList.contains(userId)){
+        long uid =     SecuritySysUtils.getInfo().getUid();
+        if(idList.contains(uid)){
             return Result.fail("不能删除当前登录用户");
         }
         sysUserService.delete(idList);
 
         return Result.success();
+    }
+
+    @GetMapping("queryByName")
+    @Operation(summary = "查询用户名")
+    public Result<SysUserVO> queryByName(@RequestParam("name") String name){
+        SysUserVO vo = sysUserService.queryByName(name);
+        return Result.success(vo);
+    }
+
+    //SysLoginQuery
+
+    @PostMapping("checkUserPwd")
+    @Operation(summary = "检查用户名")
+    public Result<SysUserVO> checkUserPwd(@RequestBody @Valid SysLoginQuery query){
+        SysUserVO vo = sysUserService.checkUserPwd(query);
+        return Result.success(vo);
+    }
+
+    @GetMapping("tt")
+    @Operation(summary = "tt")
+    public Result<SysUserVO> query(){
+        SysUserEntity entity = sysUserService.getById(10000);
+
+        SysUserVO vo = SysUserConvert.INSTANCE.convert(entity);
+        return Result.success(vo);
     }
 
 

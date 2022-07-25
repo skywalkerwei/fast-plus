@@ -37,3 +37,4 @@ sa-token:
   is-log: false
   # jwt秘钥
   jwt-secret-key: imguo@abcdefghijklmnopqrstu
+

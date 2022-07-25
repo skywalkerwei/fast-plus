@@ -27,9 +27,9 @@ public class CacheConstants {
   /** 用户信息缓存 */
   public static final String USER_CACHE = "user_cache";
 
-  public static final String MENU_CACHE = "MENU_CACHE";
+  public static final String MENU_CACHE = "menu_cache";
 
-  public static final String ROLE_CACHE = "ROLE_CACHE";
+  public static final String ROLE_CACHE = "role_cache";
 
 
 

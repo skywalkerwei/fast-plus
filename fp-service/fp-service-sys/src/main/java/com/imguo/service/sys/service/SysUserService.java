@@ -3,6 +3,7 @@ package com.imguo.service.sys.service;
 import com.imguo.common.core.page.PageResult;
 import com.imguo.model.common.service.BaseService;
 import com.imguo.model.sys.entity.SysUserEntity;
+import com.imguo.model.sys.query.SysLoginQuery;
 import com.imguo.model.sys.query.SysUserQuery;
 import com.imguo.model.sys.vo.SysUserVO;
 
@@ -28,5 +29,9 @@ public interface SysUserService extends BaseService<SysUserEntity> {
      * @param newPassword  新密码
      */
     void updatePassword(Long id, String newPassword);
+
+    SysUserVO queryByName(String username);
+
+    SysUserVO checkUserPwd(SysLoginQuery query);
 
 }
