@@ -11,7 +11,6 @@ import java.util.Map;
  * 机构管理
  *
  */
-@Mapper
 public interface SysOrgDao extends BaseDao<SysOrgEntity> {
 
     List<SysOrgEntity> getList(Map<String, Object> params);

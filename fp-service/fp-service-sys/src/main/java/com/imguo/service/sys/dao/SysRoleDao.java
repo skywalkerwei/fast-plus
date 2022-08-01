@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Param;
 /**
  * 角色管理
  */
-@Mapper
+
 public interface SysRoleDao extends BaseDao<SysRoleEntity> {
 
     /**

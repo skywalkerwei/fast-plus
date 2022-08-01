@@ -10,7 +10,6 @@ import org.apache.ibatis.annotations.Mapper;
  * 客户端管理
  *
  */
-@Mapper
 public interface SysOauthClientDao extends BaseDao<SysOauthClientEntity> {
 
     default SysOauthClientEntity getByClientId(String clientId){

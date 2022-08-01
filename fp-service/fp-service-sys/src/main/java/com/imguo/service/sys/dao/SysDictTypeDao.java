@@ -9,7 +9,6 @@ import org.apache.ibatis.annotations.Mapper;
  * 字典类型
  *
  */
-@Mapper
 public interface SysDictTypeDao extends BaseDao<SysDictTypeEntity> {
 
 }

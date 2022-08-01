@@ -9,18 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>fp-feign</artifactId>
+    <artifactId>fp-miniapp</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>fp-miniapp-wx</module>
+        <module>fp-miniapp-common</module>
+    </modules>
 
-  <dependencies>
-      <dependency>
-          <groupId>com.imguo</groupId>
-          <artifactId>fp-model</artifactId>
-      </dependency>
-      <dependency>
-          <groupId>org.springframework.cloud</groupId>
-          <artifactId>spring-cloud-starter-openfeign</artifactId>
-      </dependency>
-
-  </dependencies>
 
 </project>

@@ -21,7 +21,7 @@ public class SwaggerConfig{
     @Bean
     public GroupedOpenApi userApi(){
         String[] paths = { "/**" };
-        String[] packagedToMatch = { "com.imguo" };
+        String[] packagedToMatch = { "com.imguo","com.imguo.service.**" };
         return GroupedOpenApi.builder().group("FastPlus")
                 .pathsToMatch(paths)
                 .packagesToScan(packagedToMatch).build();

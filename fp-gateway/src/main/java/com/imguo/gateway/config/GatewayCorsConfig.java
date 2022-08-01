@@ -18,7 +18,7 @@ import reactor.core.publisher.Mono;
  *
  */
 @Configuration
-public class CorsConfig {
+public class GatewayCorsConfig {
     private static final String MAX_AGE = "18000L";
 
     @Bean

@@ -11,7 +11,7 @@ import java.util.List;
  * 角色与菜单对应关系
  *
  */
-@Mapper
+
 public interface SysRoleMenuDao extends BaseDao<SysRoleMenuEntity> {
 
 	/**

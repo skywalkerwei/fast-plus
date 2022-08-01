@@ -10,7 +10,6 @@ import java.util.List;
 /**
  * 角色数据权限
  */
-@Mapper
 public interface SysRoleDataScopeDao extends BaseDao<SysRoleDataScopeEntity> {
 
     /**

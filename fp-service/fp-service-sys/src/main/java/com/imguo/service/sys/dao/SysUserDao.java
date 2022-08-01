@@ -15,7 +15,6 @@ import java.util.Map;
  * 系统用户
  *
  */
-@Mapper
 public interface SysUserDao extends BaseDao<SysUserEntity> {
 
 	List<SysUserEntity> getList(Map<String, Object> params);
