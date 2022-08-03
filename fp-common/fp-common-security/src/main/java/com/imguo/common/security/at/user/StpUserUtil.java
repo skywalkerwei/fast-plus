@@ -4,6 +4,7 @@ import java.util.List;
 
 import cn.dev33.satoken.SaManager;
 import cn.dev33.satoken.fun.SaFunction;
+import cn.dev33.satoken.jwt.StpLogicJwtForSimple;
 import cn.dev33.satoken.session.SaSession;
 import cn.dev33.satoken.stp.SaLoginModel;
 import cn.dev33.satoken.stp.SaTokenInfo;
@@ -44,10 +45,10 @@ public class StpUserUtil {
 	}
 
 //	@Autowired
-//	public void setUserStpLogic() {
-//		StpUserUtil.stpLogic = new StpLogicJwtForSimple(StpUserUtil.TYPE);
-//		SaManager.putStpLogic(StpUserUtil.stpLogic);
-//	}
+	public void setUserStpLogic() {
+		StpUserUtil.stpLogic = new StpLogicJwtForSimple(StpUserUtil.TYPE);
+		SaManager.putStpLogic(StpUserUtil.stpLogic);
+	}
 
 	// =================== 获取token 相关 ===================
 

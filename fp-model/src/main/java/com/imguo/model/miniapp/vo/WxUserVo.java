@@ -39,7 +39,7 @@ public class WxUserVo implements Serializable {
   private String phone;
 
   @Schema(description = "商城用户")
-  private String mallUserId;
+  private Long uid;
 
   @Schema(description = "创建时间")
   private LocalDateTime createTime;
@@ -47,12 +47,4 @@ public class WxUserVo implements Serializable {
   @Schema(description = "更新时间")
   private LocalDateTime updateTime;
 
-  @Schema(description = "创建者ID")
-  private String createId;
-
-  @Schema(description = "修改者ID")
-  private String updateId;
-
-  @Schema(description = "逻辑删除：0、显示；1、隐藏")
-  private String delFlag;
 }

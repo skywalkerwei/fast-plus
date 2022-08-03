@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.imguo.model.common.entity.BaseEntity;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -14,22 +15,13 @@ import java.time.LocalDateTime;
 /**
  * 微信用户
  *
- * @author lijx
- * @date 2022/6/11
  */
 @Data
 @Schema(description = "微信用户")
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
 @TableName(value = "wx_user")
-public class WxUser extends Model<WxUser> {
-
-  @Schema(description = "PK")
-  @TableId(type = IdType.ASSIGN_ID)
-  private String id;
-
-  @Schema(description = "appId")
-  private String appId;
+public class WxUserEntity extends BaseEntity {
 
   @Schema(description = "openid")
   private String openid;
@@ -50,20 +42,6 @@ public class WxUser extends Model<WxUser> {
   private String phone;
 
   @Schema(description = "商城用户")
-  private String mallUserId;
+  private Long uid;
 
-  @Schema(description = "创建时间")
-  private LocalDateTime createTime;
-
-  @Schema(description = "更新时间")
-  private LocalDateTime updateTime;
-
-  @Schema(description = "创建者ID")
-  private String createId;
-
-  @Schema(description = "修改者ID")
-  private String updateId;
-
-  @Schema(description = "逻辑删除：0、显示；1、隐藏")
-  private String delFlag;
 }

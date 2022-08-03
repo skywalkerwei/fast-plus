@@ -42,6 +42,12 @@ public class SysTokenController {
         if (result.getCode() == 1){
             SysUserVO sysUserVO = result.getData();
             UserDetail userDetail = SecuritySysUtils.Login(sysUserVO.getId());
+            //查询权限
+            List<String> list = new ArrayList<String>();
+            list.add("sys:role:page");
+            list.add("sys:role:list");
+            list.add("sys:menu:list");
+            SecuritySysUtils.SetPermission(list);
             return Result.success(userDetail);
         }
         return  Result.fail("用户名或密码错误");

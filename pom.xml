@@ -18,7 +18,6 @@
         <module>fp-auth</module>
         <module>fp-feign</module>
         <module>fp-model</module>
-        <module>fp-miniapp</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

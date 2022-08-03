@@ -1,4 +1,4 @@
-package com.imguo.miniapp.common.dto;
+package com.imguo.model.miniapp.dto;
 
 import lombok.Data;
 
@@ -29,5 +29,5 @@ public class WxUserDTO implements Serializable {
 
   private String clientType;
 
-  private String wxUserId;
+  private Long uid;
 }

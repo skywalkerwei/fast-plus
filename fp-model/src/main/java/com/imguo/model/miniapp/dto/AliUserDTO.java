@@ -1,4 +1,4 @@
-package com.imguo.miniapp.common.vo;
+package com.imguo.model.miniapp.dto;
 
 import lombok.Data;
 
