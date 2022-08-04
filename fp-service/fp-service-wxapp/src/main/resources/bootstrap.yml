@@ -26,6 +26,9 @@ wx:
     appId: wx5ed344b55cb695a8
     secret: 9a38893b9ec3c4f5578666b5b8781548
 
+knife4j:
+  enable: true
+
 sa-token:
   # token名称 (同时也是cookie名称)
   token-name: Authorization

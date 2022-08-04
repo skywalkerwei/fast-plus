@@ -5,9 +5,9 @@ package com.imguo.common.core.constant;
  *
  */
 public class CommonConstants {
-  public static final int SUCCESS = 1;
+  public static final int SUCCESS = 200;
 
-  public static final int FAIL = -1;
+  public static final int FAIL = 0;
 
   /** 顶级ID */
   public static final String PARENT_ID = "0";

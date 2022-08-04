@@ -14,6 +14,6 @@ import com.imguo.model.miniapp.entity.WxUserEntity;
  */
 public interface WxUserService extends BaseService<WxUserEntity> {
 
-    void checkOpenID(WxMaJscode2SessionResult session);
+    WxUserEntity checkOpenID(WxMaJscode2SessionResult session);
 
 }

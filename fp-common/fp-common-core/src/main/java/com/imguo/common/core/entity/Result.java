@@ -34,10 +34,10 @@ public class Result<T> implements Serializable {
   private T data;
 
   public Boolean isOk() {
-    if (code != 0) {
-      return false;
-    } else {
+    if (code == 200) {
       return true;
+    } else {
+      return false;
     }
   }
 

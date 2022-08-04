@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@Schema(description = "字典数据查询")
+@Schema(description = "WxCodeQuery")
 public class WxCodeQuery  {
     @Schema(description = "code", required = true)
     @NotNull(message = "code不能为空")
