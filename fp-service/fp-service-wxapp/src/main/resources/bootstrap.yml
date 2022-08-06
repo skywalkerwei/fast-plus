@@ -23,11 +23,21 @@ spring:
 
 wx:
   miniapp:
-    appId: wx5ed344b55cb695a8
-    secret: 9a38893b9ec3c4f5578666b5b8781548
+    appId:
+    secret:
+  pay:
+    appId:
+    mchId:
+    mchKey:
+    tradeType: JSAPI
+    notifyUrl: https://www.xxx.com/wx/notify
+    apiv3Key:
+    certSerialNo: 
+    keyPath: classpath:cert/apiclient_cert.p12
+    privateKeyPath: classpath:cert/apiclient_key.pem
+    privateCertPath: classpath:cert/apiclient_cert.pem
 
-knife4j:
-  enable: true
+
 
 sa-token:
   # token名称 (同时也是cookie名称)

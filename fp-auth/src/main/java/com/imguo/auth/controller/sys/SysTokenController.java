@@ -39,7 +39,7 @@ public class SysTokenController {
 
         Result<SysUserVO> result = sysUserFeignService.checkUserPwd(new SysLoginQuery(username, password));
         log.info("result SysUserVO ={}", result);
-        if (result.getCode() == 1){
+        if (result.isSuccess()){
             SysUserVO sysUserVO = result.getData();
             UserDetail userDetail = SecuritySysUtils.Login(sysUserVO.getId());
             //查询权限

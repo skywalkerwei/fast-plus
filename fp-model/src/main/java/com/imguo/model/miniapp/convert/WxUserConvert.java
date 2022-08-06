@@ -1,0 +1,17 @@
+package com.imguo.model.miniapp.convert;
+
+import com.imguo.model.miniapp.entity.WxUserEntity;
+import com.imguo.model.miniapp.vo.WxUserVO;
+
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
+
+@Mapper
+public interface WxUserConvert {
+
+    WxUserConvert INSTANCE = Mappers.getMapper(WxUserConvert.class);
+
+    WxUserVO convert(WxUserEntity entity);
+
+
+}

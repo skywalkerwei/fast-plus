@@ -33,12 +33,8 @@ public class Result<T> implements Serializable {
   @Schema(description = "数据")
   private T data;
 
-  public Boolean isOk() {
-    if (code == 200) {
-      return true;
-    } else {
-      return false;
-    }
+  public Boolean isSuccess() {
+    return code == 200;
   }
 
   public static <T> Result<T> success() {

@@ -5,19 +5,18 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
+
 /**
  * 微信用户
  *
  */
 @Data
 @Schema(description = "微信用户")
-public class WxUserVo implements Serializable {
+public class WxUserVO implements Serializable {
 
   @Schema(description  = "PK")
   private String id;
-
-  @Schema(description = "appId")
-  private String appId;
 
   @Schema(description = "openid")
   private String openid;
@@ -35,16 +34,13 @@ public class WxUserVo implements Serializable {
   private String avatarUrl;
 
   @Schema(description = "手机号码")
-//  @Desensitization(MobilePhoneDesensitization.class)
   private String phone;
 
   @Schema(description = "商城用户")
   private Long uid;
 
-  @Schema(description = "创建时间")
-  private LocalDateTime createTime;
+  @Schema(description = "token")
+  private String token;
 
-  @Schema(description = "更新时间")
-  private LocalDateTime updateTime;
 
 }

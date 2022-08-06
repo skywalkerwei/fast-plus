@@ -14,7 +14,7 @@ import java.lang.annotation.*;
 public @interface FpEnableFeignClients {
   String[] value() default {};
 
-  String[] basePackages() default {"com.imguo.service"};
+  String[] basePackages() default {"com.imguo.feign"};
 
   Class<?>[] basePackageClasses() default {};
 

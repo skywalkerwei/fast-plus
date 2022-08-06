@@ -28,7 +28,6 @@ public class WxMaConfiguration {
         config.setAppid(this.getAppId());
         config.setSecret(this.getSecret());
         WxMaService service = new WxMaServiceImpl();
-        log.info("WxMaService {}",config.toString());
         service.setWxMaConfig(config);
         return service;
     }

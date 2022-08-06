@@ -1,5 +1,6 @@
 package com.imguo.common.core.exception;
 
+import cn.dev33.satoken.exception.SaTokenException;
 import lombok.extern.slf4j.Slf4j;
 import com.imguo.common.core.entity.Result;
 import cn.dev33.satoken.exception.NotLoginException;
@@ -63,7 +64,13 @@ public class FastExceptionHandler {
 		}
 		return Result.fail(code,message);
 	}
-
+	//
+	@ExceptionHandler(SaTokenException.class)
+	public Result<String> handleException(SaTokenException ex){
+		String message = "token无效";
+		int code = 10002;
+		return Result.fail(code,message);
+	}
 
 	@ExceptionHandler(Exception.class)
 	public Result<String> handleException(Exception ex){

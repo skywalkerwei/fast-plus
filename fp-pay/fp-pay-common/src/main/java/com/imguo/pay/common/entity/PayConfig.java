@@ -1,8 +1,6 @@
 package com.imguo.pay.common.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.imguo.common.core.annotation.Desensitization;
 import com.imguo.common.core.desensitization.KeyDesensitization;
@@ -12,6 +10,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * 支付配置
@@ -59,20 +58,20 @@ public class PayConfig extends Model<PayConfig> {
   private String privateCertPath;
 
   @Schema(description =  "创建时间")
-  private LocalDateTime createTime;
+  private Date createTime;
 
   @Schema(description =  "更新时间")
-  private LocalDateTime updateTime;
-
-  @Schema(description =  "创建者ID")
-  private String createId;
-
-  @Schema(description =  "修改者ID")
-  private String updateId;
+  private Date updateTime;
 
   @Schema(description =  "微信移动应用的APPID")
   private String subAppId;
 
-  @Schema(description =  "逻辑删除：0、显示；1、隐藏")
-  private String delFlag;
+  @Version
+  @TableField(fill = FieldFill.INSERT)
+  private Integer version;
+
+
+  @TableLogic
+  @TableField(fill = FieldFill.INSERT)
+  private Integer deleted;
 }

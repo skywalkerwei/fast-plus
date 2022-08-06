@@ -19,10 +19,10 @@ public class WxUserQuery {
     @NotNull(message = "encryptedData不能为空")
     private String encryptedData;
 
+    @Schema(description = "iv", required = true)
+    @NotNull(message = "iv不能为空")
     private String iv;
-    private String sessionKey;
-    private String rawData;
-    private String signature;
-    private String clientType;
+
+
 
 }
