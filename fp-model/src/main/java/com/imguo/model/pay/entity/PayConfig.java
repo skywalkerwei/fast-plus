@@ -1,15 +1,12 @@
-package com.imguo.pay.common.entity;
+package com.imguo.model.pay.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
-import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.imguo.common.core.annotation.Desensitization;
 import com.imguo.common.core.desensitization.KeyDesensitization;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -18,10 +15,9 @@ import java.util.Date;
  */
 @Data
 @Schema(description = "支付配置")
-@EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
 @TableName(value = "pay_config")
-public class PayConfig extends Model<PayConfig> {
+public class PayConfig  {
 
   @Schema(description = "PK")
   @TableId(type = IdType.ASSIGN_ID)

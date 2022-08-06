@@ -1,4 +1,4 @@
-package com.imguo.pay.common.constants;
+package com.imguo.model.pay.constants;
 
 /**
  * 支付常量

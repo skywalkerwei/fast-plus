@@ -6,7 +6,6 @@ import cn.binarywang.wx.miniapp.api.WxMaService;
 import cn.binarywang.wx.miniapp.bean.WxMaJscode2SessionResult;
 import cn.binarywang.wx.miniapp.bean.WxMaPhoneNumberInfo;
 import cn.binarywang.wx.miniapp.bean.WxMaUserInfo;
-import cn.dev33.satoken.annotation.SaCheckLogin;
 import cn.hutool.core.util.ObjectUtil;
 import com.imguo.common.core.entity.Result;
 import com.imguo.common.security.annotation.FpInner;

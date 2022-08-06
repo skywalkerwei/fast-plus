@@ -16,6 +16,7 @@
         <module>fp-service-wxapp</module>
         <module>fp-service-test</module>
         <module>fp-service-sys</module>
+        <module>fp-service-pay</module>
     </modules>
 
 

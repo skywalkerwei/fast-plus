@@ -2,9 +2,6 @@ HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
-!**/*.zip
-!**/*.p12
-!**/*.pem
 ### STS ###
 .apt_generated
 .classpath
@@ -19,6 +16,8 @@ target/
 *.iws
 *.iml
 *.ipr
+*.pem
+*.p12
 
 ### NetBeans ###
 /nbproject/private/

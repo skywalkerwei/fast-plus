@@ -13,7 +13,6 @@
     <modules>
         <module>fp-common</module>
         <module>fp-gateway</module>
-        <module>fp-pay</module>
         <module>fp-service</module>
         <module>fp-auth</module>
         <module>fp-feign</module>
