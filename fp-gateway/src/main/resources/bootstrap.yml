@@ -35,6 +35,13 @@ spring:
             - Path=/wx/**
           filters:
             - StripPrefix=1
+        - id: fp-service-pay
+          uri: lb://fp-service-pay
+          order: 1
+          predicates:
+            - Path=/pay/**
+          filters:
+            - StripPrefix=1
         - id: openapi
           uri: http://localhost:${server.port}
           predicates:

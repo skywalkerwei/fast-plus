@@ -9,18 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>fp-service</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>fp-service-mall</module>
-        <module>fp-service-wxapp</module>
-        <module>fp-service-test</module>
-        <module>fp-service-sys</module>
-        <module>fp-service-pay</module>
-        <module>fp-service-websocket</module>
-        <module>fp-service-job</module>
-        <module>fp-service-schedule</module>
-    </modules>
+    <artifactId>fp-visual</artifactId>
 
 
 </project>

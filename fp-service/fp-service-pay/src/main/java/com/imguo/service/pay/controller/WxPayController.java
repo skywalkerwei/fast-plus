@@ -3,11 +3,11 @@ package com.imguo.service.pay.controller;
 import cn.hutool.core.util.RandomUtil;
 import com.github.binarywang.wxpay.bean.request.WxPayUnifiedOrderV3Request;
 import com.github.binarywang.wxpay.bean.result.enums.TradeTypeEnum;
+import com.github.binarywang.wxpay.config.WxPayConfig;
 import com.github.binarywang.wxpay.exception.WxPayException;
 import com.github.binarywang.wxpay.service.WxPayService;
 import com.imguo.common.core.entity.Result;
 import com.imguo.service.pay.config.WxPayConfiguration;
-import com.imguo.service.pay.config.WxPayProperties;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
@@ -17,26 +17,30 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 
 @Slf4j
 @Tag(name="微信支付")
 @RestController
-@RequestMapping("/pay")
+@RequestMapping("/wx")
 @AllArgsConstructor
 public class WxPayController {
-    private WxPayProperties payProperties;
-    private WxPayConfiguration payconfig;
+    private WxPayConfiguration payConfig;
+
+
+
 
     @Operation(summary = "统一下单，并组装所需支付参数")
     @PostMapping("/createOrder")
     public Result<String> createOrder() throws WxPayException {
-
-        WxPayService  wxPayService = payconfig.wxService();
+        WxPayConfig wxPayConfig = new WxPayConfig();
+        WxPayService  wxPayService = payConfig.wxService(wxPayConfig);
 
         WxPayUnifiedOrderV3Request v3Request = new WxPayUnifiedOrderV3Request();
 
         v3Request.setDescription("test")
+                .setNotifyUrl("https://www.imguo.com/a")
                 .setOutTradeNo(RandomUtil.randomNumbers(10))
                 .setAmount(new WxPayUnifiedOrderV3Request.Amount().setTotal(10))
                 .setAttach("附加信息")
@@ -47,7 +51,7 @@ public class WxPayController {
     }
 
     @Operation(summary = "解密支付回调数据")
-    @PostMapping("/notify/order")
+    @PostMapping("/notify")
     public Result<String>  notifyOrderData(@RequestBody String notifyData) {
 //        WxPayConfig wxPayConfig = new WxPayConfig();
 //        try {

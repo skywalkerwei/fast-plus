@@ -17,7 +17,7 @@ import java.util.Date;
 @Schema(description = "支付配置")
 @Accessors(chain = true)
 @TableName(value = "pay_config")
-public class PayConfig  {
+public class PayConfigEntity  {
 
   @Schema(description = "PK")
   @TableId(type = IdType.ASSIGN_ID)

@@ -6,8 +6,6 @@ import org.springframework.stereotype.Component;
 /**
  * xxlJob配置
  *
- * 
- * @date 2022/6/2
  */
 @Data
 @Component

@@ -30,7 +30,6 @@ import javax.validation.Valid;
 
 
 @RestController
-@RequestMapping("wx")
 @Tag(name="小程序登录")
 @AllArgsConstructor
 @Slf4j
@@ -72,7 +71,7 @@ public class WxUserController {
         return  Result.success(wxMaUserInfo);
     }
 
-    @PostMapping("/phone")
+    @PostMapping("phone")
     @Operation(summary = "获取用户绑定手机号信息")
     public Result<WxMaPhoneNumberInfo> phone(@RequestBody @Valid WxBindMobileQuery query)  {
         WxUserEntity userEntity =   wxUserService.queryByOpenId(query.getOpenId());
@@ -86,7 +85,7 @@ public class WxUserController {
         return  Result.success(phoneNoInfo);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     @SaUserCheckLogin
     public Result<WxUserEntity> getById(@PathVariable long id) {
         WxUserEntity userEntity = wxUserService.getById(id);
@@ -98,7 +97,7 @@ public class WxUserController {
 
     }
 
-    @GetMapping("/me")
+    @GetMapping("me")
     @SaUserCheckLogin
     public Result<UserDetail> me() {
 

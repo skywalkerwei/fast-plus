@@ -1,47 +1,53 @@
 package com.imguo.service.pay.config;
 
+import cn.hutool.core.util.ObjectUtil;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.github.binarywang.wxpay.config.WxPayConfig;
 import com.github.binarywang.wxpay.service.WxPayService;
 import com.github.binarywang.wxpay.service.impl.WxPayServiceImpl;
+import com.imguo.model.pay.constants.PayConstants;
+import com.imguo.model.pay.entity.PayConfigEntity;
+import com.imguo.service.pay.service.PayConfigService;
 import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 
 @Configuration
 @ConditionalOnClass(WxPayService.class)
-@EnableConfigurationProperties(WxPayProperties.class)
 @AllArgsConstructor
+@Data
+@Slf4j
 public class WxPayConfiguration {
-  private WxPayProperties properties;
+  private  PayConfigService payConfigService;
 
-  @Bean
-  @ConditionalOnMissingBean
-  public WxPayService wxService() {
-    WxPayConfig payConfig = new WxPayConfig();
-    payConfig.setAppId(StringUtils.trimToNull(this.properties.getAppId()));
-    payConfig.setMchId(StringUtils.trimToNull(this.properties.getMchId()));
-    payConfig.setMchKey(StringUtils.trimToNull(this.properties.getMchKey()));
-    payConfig.setSubAppId(StringUtils.trimToNull(this.properties.getSubAppId()));
-    payConfig.setSubMchId(StringUtils.trimToNull(this.properties.getSubMchId()));
-    payConfig.setKeyPath(StringUtils.trimToNull(this.properties.getKeyPath()));
-    payConfig.setNotifyUrl(StringUtils.trimToNull(this.properties.getNotifyUrl()));
+  public WxPayService wxService(WxPayConfig wxPayConfig) {
 
+    PayConfigEntity payConfig =
+            payConfigService.getOne(
+                    Wrappers.<PayConfigEntity>lambdaQuery().eq(PayConfigEntity::getType, PayConstants.PAY_TYPE_1));
+    log.info("payConfig = {}",payConfig);
+    if (ObjectUtil.isNull(payConfig)) {
+      throw new RuntimeException("未配置微信支付");
+    }
+
+    final WxPayServiceImpl wxPayService = new WxPayServiceImpl();
+    wxPayConfig.setAppId(StringUtils.trimToNull(payConfig.getAppId()));
+    wxPayConfig.setMchId(StringUtils.trimToNull(payConfig.getMchId()));
+    wxPayConfig.setMchKey(StringUtils.trimToNull(payConfig.getMchKey()));
+    wxPayConfig.setKeyPath(StringUtils.trimToNull(payConfig.getKeyPath()));
     // 以下是apiv3
-    payConfig.setPrivateKeyPath(StringUtils.trimToNull(this.properties.getPrivateKeyPath()));
-    payConfig.setPrivateCertPath(StringUtils.trimToNull(this.properties.getPrivateCertPath()));
-    payConfig.setCertSerialNo(StringUtils.trimToNull(this.properties.getCertSerialNo()));
-    payConfig.setApiV3Key(StringUtils.trimToNull(this.properties.getApiv3Key()));
+    wxPayConfig.setPrivateKeyPath(StringUtils.trimToNull(payConfig.getPrivateKeyPath()));
+    wxPayConfig.setPrivateCertPath(StringUtils.trimToNull(payConfig.getPrivateCertPath()));
+    wxPayConfig.setCertSerialNo(StringUtils.trimToNull(payConfig.getCertSerialNo()));
+    wxPayConfig.setApiV3Key(StringUtils.trimToNull(payConfig.getApiv3Key()));
 
     // 可以指定是否使用沙箱环境
-    payConfig.setUseSandboxEnv(false);
-
-    WxPayService wxPayService = new WxPayServiceImpl();
-    wxPayService.setConfig(payConfig);
+    wxPayConfig.setUseSandboxEnv(false);
+    wxPayService.setConfig(wxPayConfig);
     return wxPayService;
   }
 

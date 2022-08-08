@@ -1,8 +1,8 @@
 server:
-  port: 8103
+  port: 8109
 spring:
   application:
-    name: fp-service-wxapp
+    name: fp-service-pay
   profiles:
     active: dev
   cloud:
@@ -20,11 +20,6 @@ spring:
         extension-configs:
           - data-id: datasource.yaml
             refresh: true
-
-wx:
-  miniapp:
-    appId: wx5ed344b55cb695a8
-    secret: 9a38893b9ec3c4f5578666b5b8781548
 
 
 sa-token:

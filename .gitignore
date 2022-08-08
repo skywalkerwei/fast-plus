@@ -18,6 +18,7 @@ target/
 *.ipr
 *.pem
 *.p12
+*.zip
 
 ### NetBeans ###
 /nbproject/private/
