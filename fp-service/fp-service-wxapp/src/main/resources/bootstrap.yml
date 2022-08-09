@@ -17,9 +17,10 @@ spring:
         namespace: ${spring.cloud.nacos.discovery.namespace}
         file-extension: yaml
         # 指定配置
-        extension-configs:
+        shared-configs:
           - data-id: datasource.yaml
             refresh: true
+
 
 wx:
   miniapp:
