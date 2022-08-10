@@ -2,6 +2,7 @@ package com.imguo.model.sys.convert;
 
 import com.imguo.model.sys.entity.SysOauthClientEntity;
 import com.imguo.model.sys.vo.SysOauthClientVO;
+import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -14,6 +15,7 @@ public interface SysOauthClientConvert {
 
     SysOauthClientVO convert(SysOauthClientEntity entity);
 
+    @BeanMapping(ignoreByDefault = true)
     SysOauthClientEntity convert(SysOauthClientVO vo);
 
     List<SysOauthClientVO> convertList(List<SysOauthClientEntity> list);

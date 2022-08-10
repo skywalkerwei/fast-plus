@@ -19,8 +19,10 @@
         <module>fp-common-log</module>
         <module>fp-common-job</module>
         <module>fp-common-nacos</module>
+        <module>fp-common-seata</module>
         <module>fp-common-feign</module>
         <module>fp-common-web3</module>
+        <module>fp-common-sms</module>
     </modules>
 
 </project>

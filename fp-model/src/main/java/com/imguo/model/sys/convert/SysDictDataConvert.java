@@ -3,6 +3,7 @@ package com.imguo.model.sys.convert;
 
 import com.imguo.model.sys.entity.SysDictDataEntity;
 import com.imguo.model.sys.vo.SysDictDataVO;
+import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -12,10 +13,13 @@ import java.util.List;
 public interface SysDictDataConvert {
     SysDictDataConvert INSTANCE = Mappers.getMapper(SysDictDataConvert.class);
 
+    @BeanMapping(ignoreByDefault = true)
     SysDictDataVO convert(SysDictDataEntity entity);
 
+    @BeanMapping(ignoreByDefault = true)
     SysDictDataEntity convert(SysDictDataVO vo);
-    
+
+    @BeanMapping(ignoreByDefault = true)
     List<SysDictDataVO> convertList(List<SysDictDataEntity> list);
 
 }

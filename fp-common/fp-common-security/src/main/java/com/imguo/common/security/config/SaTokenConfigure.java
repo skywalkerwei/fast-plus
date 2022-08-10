@@ -1,9 +1,11 @@
 package com.imguo.common.security.config;
 
+import cn.dev33.satoken.SaManager;
 import cn.dev33.satoken.interceptor.SaAnnotationInterceptor;
 import cn.dev33.satoken.jwt.StpLogicJwtForSimple;
 import cn.dev33.satoken.stp.StpLogic;
 import cn.dev33.satoken.strategy.SaStrategy;
+import com.imguo.common.security.at.user.StpUserUtil;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,6 +60,12 @@ public class SaTokenConfigure implements WebMvcConfigurer {
   @Bean
   public StpLogic getStpLogicJwt() {
     return new StpLogicJwtForSimple();
+  }
+
+  @Autowired
+  public void setUserStpLogic() {
+    StpUserUtil.stpLogic = new StpLogicJwtForSimple(StpUserUtil.TYPE);
+    SaManager.putStpLogic(StpUserUtil.stpLogic);
   }
 
   /**

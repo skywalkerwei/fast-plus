@@ -69,6 +69,11 @@
             <artifactId>fp-common-redis</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.imguo</groupId>
+            <artifactId>fp-common-storage</artifactId>
+        </dependency>
+
     </dependencies>
 
 

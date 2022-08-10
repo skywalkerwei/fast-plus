@@ -58,6 +58,15 @@ public class WxUserController {
         }
     }
 
+
+    @GetMapping("t")
+    @Operation(summary = "t")
+    public Result<UserDetail> t() {
+        UserDetail tokenInfo = SecurityUserUtils.Login(999);
+        return  Result.success(tokenInfo);
+    }
+
+
     @PostMapping("updateUser")
     @Operation(summary = "updateUser")
     public Result<WxMaUserInfo> updateUser(@RequestBody @Valid WxUserQuery query)  {

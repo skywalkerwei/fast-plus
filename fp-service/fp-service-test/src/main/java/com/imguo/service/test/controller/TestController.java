@@ -14,20 +14,19 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @AllArgsConstructor
-@RequestMapping("/test/")
 public class TestController {
 
-    private MallFeignService mallFeignService;
-    private SysUserFeignService sysUserFeignService;
-
-    @GetMapping("t1")
-    public Result<String> t1() {
-
-        return Result.success(mallFeignService.t1());
-    }
-
-    @GetMapping("t2")
-    public Result<SysUserVO> t2() {
-        return sysUserFeignService.checkUserPwd(new SysLoginQuery("username", "password"));
-    }
+//    private MallFeignService mallFeignService;
+//    private SysUserFeignService sysUserFeignService;
+//
+//    @GetMapping("t1")
+//    public Result<String> t1() {
+//
+//        return Result.success(mallFeignService.t1());
+//    }
+//
+//    @GetMapping("t2")
+//    public Result<SysUserVO> t2() {
+//        return sysUserFeignService.checkUserPwd(new SysLoginQuery("username", "password"));
+//    }
 }

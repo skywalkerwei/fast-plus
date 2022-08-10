@@ -113,7 +113,7 @@
 
     <!-- 开发环境，控制台打印-->
     <springProfile name="dev">
-        <logger name="com.imguo.service.goods" level="DEBUG" />
+        <logger name="com.imguo.service.test" level="DEBUG" />
         <root level="INFO">
             <appender-ref ref="CONSOLE" />
         </root>

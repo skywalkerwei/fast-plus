@@ -2,6 +2,7 @@ package com.imguo.model.sys.convert;
 
 import com.imguo.model.sys.entity.SysDictTypeEntity;
 import com.imguo.model.sys.vo.SysDictTypeVO;
+import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -13,6 +14,7 @@ public interface SysDictTypeConvert {
 
     SysDictTypeVO convert(SysDictTypeEntity entity);
 
+    @BeanMapping(ignoreByDefault = true)
     SysDictTypeEntity convert(SysDictTypeVO vo);
     
     List<SysDictTypeVO> convertList(List<SysDictTypeEntity> list);
