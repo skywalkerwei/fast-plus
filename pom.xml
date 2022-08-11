@@ -137,6 +137,12 @@
                 <artifactId>fp-common-job</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <!--           sms模块-->
+            <dependency>
+                <groupId>com.imguo</groupId>
+                <artifactId>fp-common-sms</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <!--           Nacos操作配置信息模块-->
             <dependency>
                 <groupId>com.imguo</groupId>

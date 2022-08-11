@@ -71,8 +71,15 @@
 
         <dependency>
             <groupId>com.imguo</groupId>
+            <artifactId>fp-common-sms</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.imguo</groupId>
             <artifactId>fp-common-storage</artifactId>
         </dependency>
+
+
 
     </dependencies>
 

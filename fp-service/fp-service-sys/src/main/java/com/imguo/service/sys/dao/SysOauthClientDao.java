@@ -4,7 +4,6 @@ import com.imguo.model.common.dao.BaseDao;
 import com.imguo.model.sys.entity.SysOauthClientEntity;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 客户端管理

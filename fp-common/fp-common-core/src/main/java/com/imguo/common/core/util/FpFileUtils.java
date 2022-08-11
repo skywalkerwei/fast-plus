@@ -10,7 +10,7 @@ import java.io.*;
  * file工具类 http://www.manongjc.com/detail/24-cmrqotjccdvsmdf.html
  *
  */
-public class FileUtils {
+public class FpFileUtils {
   /**
    * 将MultipartFile转为File
    *
