@@ -1,11 +1,14 @@
 package com.imguo.service.test;
 
+import com.imguo.common.feign.annotation.FpEnableFeignClients;
+import com.imguo.common.job.annotation.FpEnableXxlJob;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.openfeign.EnableFeignClients;
+
 
 @SpringBootApplication
-@EnableFeignClients(basePackages = "com.imguo.feign")
+@FpEnableXxlJob
+@FpEnableFeignClients
 public class FpServiceTestApplication {
 
     public static void main(String[] args) {

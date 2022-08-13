@@ -15,4 +15,4 @@ services:
     env_file:
       - app.env
     volumes:
-      - /work/www/fast-cloud/fast-cloud-system.jar:/app/app.jar
+      - /work/www/fast-plus/fast-cloud-system.jar:/app/app.jar

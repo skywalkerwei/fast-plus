@@ -3,19 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>fast-plus</artifactId>
+        <artifactId>fp-visual</artifactId>
         <groupId>com.imguo</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>fp-visual</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>fp-xxl-job-admin</module>
-        <module>fp-monitor</module>
-        <module>fp-seata-server</module>
-    </modules>
+    <artifactId>fp-seata-server</artifactId>
+
 
 
 </project>

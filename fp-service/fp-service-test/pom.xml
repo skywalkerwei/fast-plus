@@ -79,6 +79,14 @@
             <artifactId>fp-common-storage</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.imguo</groupId>
+            <artifactId>fp-common-job</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.imguo</groupId>
+            <artifactId>fp-common-feign</artifactId>
+        </dependency>
 
 
     </dependencies>

@@ -32,3 +32,13 @@ storage:
   local:
     # 本地上传路径
     path: /Users/wei/Desktop/fast-plus/upload
+
+xxl:
+  job:
+    adminAddresses: http://127.0.0.1:7002/xxl-job-admin
+    appName: job-test
+    ip:
+    port: 9999
+    accessToken:
+    logPath: ./xxl-job/jobhandler
+    logRetentionDays: 30
