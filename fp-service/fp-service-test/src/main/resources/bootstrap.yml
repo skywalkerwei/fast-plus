@@ -40,5 +40,5 @@ xxl:
     ip:
     port: 9999
     accessToken:
-    logPath: ./xxl-job/jobhandler
+    logPath: ./logs/jobhandler
     logRetentionDays: 30
