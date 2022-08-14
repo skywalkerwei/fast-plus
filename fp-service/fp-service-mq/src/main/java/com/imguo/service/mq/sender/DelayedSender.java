@@ -18,7 +18,7 @@ public class DelayedSender {
 
     public void send(int delayedTime, String messageBody) {
         // 指定之前定义的延迟交换机名 与路由键名
-        rabbitTemplate.convertAndSend("test-delayed-exchange", "leilei", messageBody, message -> {
+        rabbitTemplate.convertAndSend("test-delayed-exchange", "delayQ", messageBody, message -> {
             // 延迟时间单位是毫秒
             message.getMessageProperties().setDelay(delayedTime);
             System.out.println("消息发送时间:" + LocalDateTime.now()

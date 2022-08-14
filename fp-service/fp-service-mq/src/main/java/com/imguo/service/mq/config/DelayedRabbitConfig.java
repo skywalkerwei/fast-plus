@@ -32,7 +32,7 @@ public class DelayedRabbitConfig {
      */
     @Bean
     public Binding delayQueueBindExchange(Exchange delayExchange, Queue delayQueue) {
-        return BindingBuilder.bind(delayQueue).to(delayExchange).with("leilei").noargs();
+        return BindingBuilder.bind(delayQueue).to(delayExchange).with("delayQ").noargs();
     }
 
 }
