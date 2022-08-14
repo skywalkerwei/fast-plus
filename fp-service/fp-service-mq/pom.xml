@@ -9,7 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>fp-service-test</artifactId>
+    <artifactId>fp-service-mq</artifactId>
+
     <dependencies>
         <dependency>
             <groupId>com.imguo</groupId>
@@ -68,38 +69,11 @@
             <groupId>com.imguo</groupId>
             <artifactId>fp-common-redis</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>com.imguo</groupId>
-            <artifactId>fp-common-sms</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>com.imguo</groupId>
-            <artifactId>fp-common-storage</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.imguo</groupId>
-            <artifactId>fp-common-job</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.imguo</groupId>
-            <artifactId>fp-common-feign</artifactId>
-        </dependency>
-
-
     </dependencies>
-
-    <build>
-        <finalName>${project.artifactId}</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 
 </project>

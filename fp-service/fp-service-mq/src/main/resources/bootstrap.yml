@@ -1,0 +1,33 @@
+server:
+  port: 8110
+spring:
+  application:
+    name: fp-service-mq
+  profiles:
+    active: dev
+  rabbitmq:
+    username: myuser
+    password: mypass
+    virtual-host: /
+    host: 127.0.0.1
+    port: 5672
+    #确认消息已发送到交换机(Exchange)
+    #publisher-confirms: true
+    publisher-confirm-type: correlated
+      #确认消息已发送到队列(Queue)
+    publisher-returns: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos_host:127.0.0.1}:${nacos_port:8848}
+        # 命名空间，默认：public
+        namespace: ${nacos_namespace:}
+        service: ${spring.application.name}
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        file-extension: yaml
+        # 指定配置
+        extension-configs:
+          - data-id: datasource.yaml
+            refresh: true
