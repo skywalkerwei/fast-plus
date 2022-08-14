@@ -17,6 +17,21 @@ public class SendMessageController {
 
     private RabbitTemplate rabbitTemplate;
 
+    @GetMapping("/test")
+    public String test() {
+//        rabbitTemplate.convertAndSend("test-delayed-exchange", "leilei", "test-delayed-queue");
+        String  messageBody = "hello world test";
+        rabbitTemplate.convertAndSend("test-delayed-exchange", "leilei", messageBody, message -> {
+            // 延迟时间单位是毫秒
+            message.getMessageProperties().setDelay(15000);
+            System.out.println("消息发送时间:" + LocalDateTime.now()
+                    .format(DateTimeFormatter.ofPattern("yyy-MM-dd HH:mm:ss")) +
+                    "消息内容:" + messageBody);
+            return message;
+        });
+        return "ok";
+    }
+
     @GetMapping("/sendDirectMessage")
     public String sendDirectMessage() {
         String messageId = String.valueOf(UUID.randomUUID());
