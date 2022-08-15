@@ -4,6 +4,7 @@ import cn.dev33.satoken.exception.SaTokenException;
 import lombok.extern.slf4j.Slf4j;
 import com.imguo.common.core.entity.Result;
 import cn.dev33.satoken.exception.NotLoginException;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  */
 @Slf4j
 @RestControllerAdvice
+@AutoConfiguration
 public class FastExceptionHandler {
 	/**
 	 * 处理自定义异常

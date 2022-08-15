@@ -12,10 +12,20 @@
     <artifactId>fp-common-seata</artifactId>
     <dependencies>
 
-        <!-- SpringBoot Seata -->
+        <dependency>
+            <groupId>com.imguo</groupId>
+            <artifactId>fp-common-core</artifactId>
+        </dependency>
+        <!-- seata-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+        </dependency>
+        <!--  seata kryo 序列化-->
+        <dependency>
+            <groupId>io.seata</groupId>
+            <artifactId>seata-serializer-kryo</artifactId>
+            <version>1.5.1</version>
         </dependency>
 
     </dependencies>

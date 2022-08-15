@@ -14,7 +14,6 @@
     <modules>
         <module>fp-xxl-job-admin</module>
         <module>fp-monitor</module>
-        <module>fp-seata-server</module>
     </modules>
 
 
