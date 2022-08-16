@@ -1,13 +1,11 @@
 package com.imguo.common.myabtis.handler;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.reflection.MetaObject;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
-@Slf4j
 @Component
 public class CreateUpdateHandler implements MetaObjectHandler {
 
@@ -18,7 +16,6 @@ public class CreateUpdateHandler implements MetaObjectHandler {
 
     @Override
     public void insertFill(MetaObject metaObject) {
-        log.info("insertFill");
         Date date = new Date();
         strictInsertFill(metaObject, CREATE_TIME, Date.class, date);
         strictInsertFill(metaObject, UPDATE_TIME, Date.class, date);
@@ -32,8 +29,6 @@ public class CreateUpdateHandler implements MetaObjectHandler {
 
     @Override
     public void updateFill(MetaObject metaObject) {
-        log.info("updateFill");
         strictUpdateFill(metaObject, UPDATE_TIME, Date.class, new Date());
-//        this.strictUpdateFill(metaObject, "updateTime", LocalDateTime.class,LocalDateTime.now());
     }
 }

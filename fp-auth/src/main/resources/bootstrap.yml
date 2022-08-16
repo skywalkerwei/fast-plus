@@ -8,7 +8,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: ${nacos_host:127.0.0.1}:${nacos_port:8848}
+        server-addr: ${nacos_host:81.69.250.202}:${nacos_port:8848}
         namespace: ${nacos_namespace:}
         service: ${spring.application.name}
       config:

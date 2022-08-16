@@ -1,0 +1,17 @@
+server:
+  port: 7100
+
+spring:
+  application:
+    name: fp-monitor
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos_host:81.69.250.202}:${nacos_port:8848}
+        # 命名空间，默认：public
+        namespace: ${nacos_namespace:}
+        service: ${spring.application.name}
+  security:
+    user:
+      name: "admin"
+      password: "123123"

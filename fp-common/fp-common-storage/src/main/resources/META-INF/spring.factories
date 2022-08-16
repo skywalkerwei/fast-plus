@@ -1,4 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-    com.imguo.common.storage.utils.LocalStorageUtils,\
-    com.imguo.common.storage.properties.LocalStorageProperties
-

@@ -1,3 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.imguo.common.sms.properties.AliSmsProperties,\
-  com.imguo.common.sms.util.AliSmsUtils

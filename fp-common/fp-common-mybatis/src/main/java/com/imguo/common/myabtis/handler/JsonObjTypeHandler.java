@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * JSONObject 转 string string 转 JSONObject
+ * JSONObject 转 string /string 转 JSONObject
  *
  */
 @MappedTypes(JSONObject.class)

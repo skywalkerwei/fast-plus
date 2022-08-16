@@ -23,6 +23,7 @@
         <module>fp-common-feign</module>
         <module>fp-common-web3</module>
         <module>fp-common-sms</module>
+        <module>fp-common-bom</module>
     </modules>
 
 </project>
