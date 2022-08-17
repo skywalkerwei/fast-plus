@@ -13,13 +13,13 @@ import java.util.List;
 public interface SysMenuConvert {
     SysMenuConvert INSTANCE = Mappers.getMapper(SysMenuConvert.class);
 
-    @BeanMapping(ignoreByDefault = true)
+    
     SysMenuEntity convert(SysMenuVO vo);
 
-    @BeanMapping(ignoreByDefault = true)
+    
     SysMenuVO convert(SysMenuEntity entity);
 
-    @BeanMapping(ignoreByDefault = true)
+    
     List<SysMenuVO> convertList(List<SysMenuEntity> list);
 
 }

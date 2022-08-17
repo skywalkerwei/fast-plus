@@ -12,13 +12,13 @@ import java.util.List;
 public interface SysRoleConvert {
     SysRoleConvert INSTANCE = Mappers.getMapper(SysRoleConvert.class);
 
-    @BeanMapping(ignoreByDefault = true)
+    
     SysRoleVO convert(SysRoleEntity entity);
 
-    @BeanMapping(ignoreByDefault = true)
+    
     SysRoleEntity convert(SysRoleVO vo);
 
-    @BeanMapping(ignoreByDefault = true)
+    
     List<SysRoleVO> convertList(List<SysRoleEntity> list);
 
 }

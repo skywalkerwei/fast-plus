@@ -29,13 +29,11 @@ public class WxPayController {
     private WxPayConfiguration payConfig;
 
 
-
-
     @Operation(summary = "统一下单，并组装所需支付参数")
     @PostMapping("/createOrder")
     public Result<String> createOrder() throws WxPayException {
-        WxPayConfig wxPayConfig = new WxPayConfig();
-        WxPayService  wxPayService = payConfig.wxService(wxPayConfig);
+
+        WxPayService  wxPayService = payConfig.wxService();
 
         WxPayUnifiedOrderV3Request v3Request = new WxPayUnifiedOrderV3Request();
 

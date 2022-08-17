@@ -12,7 +12,7 @@ public interface WxUserConvert {
 
     WxUserConvert INSTANCE = Mappers.getMapper(WxUserConvert.class);
 
-    @BeanMapping(ignoreByDefault = true)
+
     WxUserVO convert(WxUserEntity entity);
 
 

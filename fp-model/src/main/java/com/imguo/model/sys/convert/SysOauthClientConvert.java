@@ -15,7 +15,7 @@ public interface SysOauthClientConvert {
 
     SysOauthClientVO convert(SysOauthClientEntity entity);
 
-    @BeanMapping(ignoreByDefault = true)
+    
     SysOauthClientEntity convert(SysOauthClientVO vo);
 
     List<SysOauthClientVO> convertList(List<SysOauthClientEntity> list);

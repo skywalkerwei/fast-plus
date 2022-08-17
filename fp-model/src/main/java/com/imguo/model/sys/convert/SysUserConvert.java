@@ -13,13 +13,13 @@ import java.util.List;
 public interface SysUserConvert {
     SysUserConvert INSTANCE = Mappers.getMapper(SysUserConvert.class);
 
-    @BeanMapping(ignoreByDefault = true)
+    
     SysUserVO convert(SysUserEntity entity);
 
-    @BeanMapping(ignoreByDefault = true)
+    
     SysUserEntity convert(SysUserVO vo);
 
-    @BeanMapping(ignoreByDefault = true)
+    
     List<SysUserVO> convertList(List<SysUserEntity> list);
 
 }

@@ -16,7 +16,7 @@ public interface SysPostConvert {
 
     SysPostVO convert(SysPostEntity entity);
 
-    @BeanMapping(ignoreByDefault = true)
+    
     SysPostEntity convert(SysPostVO vo);
 
     List<SysPostVO> convertList(List<SysPostEntity> list);

@@ -18,7 +18,6 @@
         <module>fp-service-sys</module>
         <module>fp-service-pay</module>
         <module>fp-service-websocket</module>
-        <module>fp-service-job</module>
         <module>fp-service-mq</module>
         <module>fp-service-search</module>
     </modules>

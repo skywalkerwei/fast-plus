@@ -13,13 +13,13 @@ import java.util.List;
 public interface SysDictDataConvert {
     SysDictDataConvert INSTANCE = Mappers.getMapper(SysDictDataConvert.class);
 
-    @BeanMapping(ignoreByDefault = true)
+    
     SysDictDataVO convert(SysDictDataEntity entity);
 
-    @BeanMapping(ignoreByDefault = true)
+    
     SysDictDataEntity convert(SysDictDataVO vo);
 
-    @BeanMapping(ignoreByDefault = true)
+    
     List<SysDictDataVO> convertList(List<SysDictDataEntity> list);
 
 }

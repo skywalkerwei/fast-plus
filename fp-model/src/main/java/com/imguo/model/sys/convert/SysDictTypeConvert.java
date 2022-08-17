@@ -14,7 +14,7 @@ public interface SysDictTypeConvert {
 
     SysDictTypeVO convert(SysDictTypeEntity entity);
 
-    @BeanMapping(ignoreByDefault = true)
+    
     SysDictTypeEntity convert(SysDictTypeVO vo);
     
     List<SysDictTypeVO> convertList(List<SysDictTypeEntity> list);

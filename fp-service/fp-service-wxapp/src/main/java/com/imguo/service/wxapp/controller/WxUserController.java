@@ -48,7 +48,9 @@ public class WxUserController {
             WxMaJscode2SessionResult sessionInfo = wxService.getUserService().getSessionInfo(query.getCode());
             log.info("code2SessionInfo {}",sessionInfo);
             WxUserEntity userEntity =   wxUserService.checkOpenID(sessionInfo);
+            log.info("userEntity {}",userEntity);
             WxUserVO userVO = WxUserConvert.INSTANCE.convert(userEntity);
+            log.info("userVO {}",userVO);
             UserDetail tokenInfo = SecurityUserUtils.Login(userEntity.getId());
             userVO.setToken(tokenInfo.getToken());
 
