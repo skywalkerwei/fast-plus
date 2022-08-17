@@ -167,11 +167,11 @@
 
 
             <!-- 数据库 连接池 -->
-            <dependency>
-                <groupId>com.zaxxer</groupId>
-                <artifactId>HikariCP</artifactId>
-                <version>${hikariCP.version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.zaxxer</groupId>-->
+<!--                <artifactId>HikariCP</artifactId>-->
+<!--                <version>${hikariCP.version}</version>-->
+<!--            </dependency>-->
             <!--mysql 驱动-->
             <dependency>
                 <groupId>mysql</groupId>

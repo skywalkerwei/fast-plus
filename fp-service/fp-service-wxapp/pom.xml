@@ -24,22 +24,7 @@
             <groupId>com.imguo</groupId>
             <artifactId>fp-common-security</artifactId>
         </dependency>
-        <!-- druid 连接池 -->
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-        </dependency>
-        <!--数据库-->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-        <!--            mybatis-plus-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-        </dependency>
-        <!--            mybatis-plus-->
+
         <dependency>
             <groupId>com.imguo</groupId>
             <artifactId>fp-common-mybatis</artifactId>

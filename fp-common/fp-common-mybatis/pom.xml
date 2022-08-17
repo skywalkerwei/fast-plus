@@ -11,11 +11,11 @@
     <packaging>jar</packaging>
     <artifactId>fp-common-mybatis</artifactId>
     <dependencies>
-        <!-- druid 连接池 -->
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>com.zaxxer</groupId>-->
+<!--            <artifactId>HikariCP</artifactId>-->
+<!--        </dependency>-->
         <!--数据库-->
         <dependency>
             <groupId>mysql</groupId>
