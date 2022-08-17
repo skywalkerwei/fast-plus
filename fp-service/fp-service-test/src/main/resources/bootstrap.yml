@@ -21,27 +21,15 @@ spring:
           - data-id: datasource.yaml
             refresh: true
 
-sms:
-  ali:
-    access-key-id:
-    access-key-secret:
-    login-template-code:
-    login-sign-name:
+          - data-id: sms.yaml
+            refresh: true
 
-storage:
-  local:
-    # 本地上传路径
-    path: /Users/wei/Desktop/fast-plus/upload
+          - data-id: storage.yaml
+            refresh: true
 
-xxl:
-  job:
-    adminAddresses: http://127.0.0.1:7002/xxl-job-admin
-    appName: job-test
-    ip:
-    port: 9999
-    accessToken:
-    logPath: ./logs/jobhandler
-    logRetentionDays: 30
+          - data-id: xxl-job.yaml
+            refresh: true
+
 
 management:
   endpoints:
