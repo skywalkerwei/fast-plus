@@ -2,6 +2,7 @@ package com.imguo.service.sys.service.impl;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.imguo.common.core.exception.FastException;
+import com.imguo.common.core.util.FpLoggers;
 import com.imguo.model.common.constant.Constant;
 import com.imguo.model.common.service.impl.BaseServiceImpl;
 import com.imguo.model.sys.query.SysLoginQuery;
@@ -19,7 +20,6 @@ import com.imguo.service.sys.service.SysUserPostService;
 import com.imguo.service.sys.service.SysUserRoleService;
 import com.imguo.service.sys.service.SysUserService;
 import com.imguo.model.sys.vo.SysUserVO;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -33,7 +33,6 @@ import java.util.Map;
  *
  */
 @Service
-@Slf4j
 @AllArgsConstructor
 public class SysUserServiceImpl extends BaseServiceImpl<SysUserDao, SysUserEntity> implements SysUserService {
     private final SysUserRoleService sysUserRoleService;
@@ -158,9 +157,9 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUserDao, SysUserEntit
         if(entity == null){
             throw new FastException("用户不存在");
         }
-        log.info("用户密码1：{}",entity.getPassword());
-        log.info("用户密码2：{}",query.getPassword());
-        log.info("用户密码3：{}",passwordEncoder.encode(query.getPassword()));
+        FpLoggers.info("用户密码1：{}",entity.getPassword());
+        FpLoggers.info("用户密码2：{}",query.getPassword());
+        FpLoggers.info("用户密码3：{}",passwordEncoder.encode(query.getPassword()));
         if(!passwordEncoder.matches(query.getPassword(), entity.getPassword())){
             throw new FastException("密码不正确");
         }

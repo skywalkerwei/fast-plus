@@ -7,7 +7,6 @@ import cn.dev33.satoken.stp.StpLogic;
 import cn.dev33.satoken.strategy.SaStrategy;
 import com.imguo.common.security.at.user.StpUserUtil;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +19,6 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 注解鉴权
  */
-@Slf4j
 @Configuration
 @AllArgsConstructor
 public class SaTokenConfigure implements WebMvcConfigurer {

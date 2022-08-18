@@ -4,14 +4,12 @@ import com.imguo.model.mall.entity.Mall;
 import com.imguo.model.mall.query.TestQuery;
 import com.imguo.service.mall.service.MallService;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.math.BigDecimal;
 import java.util.List;
 
-@Slf4j
 @AllArgsConstructor
 @RestController
 @RequestMapping("/test/")

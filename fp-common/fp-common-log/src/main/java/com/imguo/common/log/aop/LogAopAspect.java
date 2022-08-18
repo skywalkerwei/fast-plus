@@ -1,16 +1,10 @@
 package com.imguo.common.log.aop;
 
-import cn.dev33.satoken.stp.StpUtil;
-import cn.hutool.core.util.URLUtil;
-import cn.hutool.extra.servlet.ServletUtil;
-import com.imguo.common.core.constant.CommonConstants;
-import com.imguo.common.core.constant.SecurityConstants;
-import com.imguo.common.core.util.IpUtils;
+
 import com.imguo.common.log.annotation.SysLog;
 
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
-import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -30,7 +24,6 @@ import java.util.concurrent.CompletableFuture;
  * 
  * @since 2022/2/17 9:27
  */
-@Slf4j
 @AllArgsConstructor
 @Component
 @Aspect

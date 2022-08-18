@@ -5,7 +5,7 @@ import com.imguo.common.core.constant.SecurityConstants;
 import com.imguo.common.security.annotation.FpInner;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
-import lombok.extern.slf4j.Slf4j;
+
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -18,7 +18,6 @@ import java.lang.reflect.Method;
  * 内部接口调用处理 aop
  *
  */
-@Slf4j
 @Aspect
 @Component
 @AllArgsConstructor
@@ -36,7 +35,7 @@ public class FpInnerAopAspect {
     FpInner fpInner = method.getAnnotation(FpInner.class);
     String header = request.getHeader(SecurityConstants.SOURCE);
     if (fpInner.value() && !StrUtil.equals(SecurityConstants.SOURCE_IN, header)) {
-      log.warn("访问接口 {} 没有权限", point.getSignature().getName());
+//      log.warn("访问接口 {} 没有权限", point.getSignature().getName());
       throw new RuntimeException("无权访问");
     }
     return point.proceed();

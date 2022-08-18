@@ -3,7 +3,10 @@ package com.imguo.common.security.handler;
 import cn.dev33.satoken.exception.NotLoginException;
 import cn.dev33.satoken.exception.SaTokenException;
 import com.imguo.common.core.entity.Result;
-import lombok.extern.slf4j.Slf4j;
+import com.imguo.common.core.exception.FastException;
+import com.imguo.common.core.util.FpLoggers;
+import org.springframework.validation.BindException;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -11,14 +14,13 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  * 全局异常处理器
  *
  */
-@Slf4j
 @RestControllerAdvice
 public class FpGlobalExceptionHandlerResolver {
 
 
   @ExceptionHandler(NotLoginException.class)
   public Result<String> handlerNotLoginException(NotLoginException nle) {
-    log.info("FpGlobalExceptionHandlerResolver NotLoginException异常：{}", nle.getMessage());
+    FpLoggers.info("FpGlobalExceptionHandlerResolver NotLoginException异常：{}", nle.getMessage());
     // 打印堆栈，以供调试
     nle.printStackTrace();
     // 判断场景值，定制化异常信息
@@ -51,6 +53,32 @@ public class FpGlobalExceptionHandlerResolver {
     String message = "token无效";
     int code = 10002;
     return Result.fail(code,message);
+  }
+
+  /**
+   * 处理自定义异常
+   */
+  @ExceptionHandler(FastException.class)
+  public Result<String> handleException(FastException ex){
+    return Result.fail(ex.getCode(), ex.getMsg());
+  }
+
+  /**
+   * SpringMVC参数绑定，Validator校验不正确
+   */
+  @ExceptionHandler(BindException.class)
+  public Result<String> bindException(BindException ex) {
+    FieldError fieldError = ex.getFieldError();
+    assert fieldError != null;
+    return Result.fail(fieldError.getDefaultMessage());
+  }
+
+
+  @ExceptionHandler(Exception.class)
+  public Result<String> handleException(Exception ex){
+    FpLoggers.error("handleException handleException ==== ", ex);
+    return Result.fail(ex.getMessage());
+//		return Result.fail(ErrorCode.INTERNAL_SERVER_ERROR.getCode(),ex.getMessage());
   }
 
 }

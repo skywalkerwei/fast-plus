@@ -5,12 +5,12 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.github.binarywang.wxpay.config.WxPayConfig;
 import com.github.binarywang.wxpay.service.WxPayService;
 import com.github.binarywang.wxpay.service.impl.WxPayServiceImpl;
+import com.imguo.common.core.util.FpLoggers;
 import com.imguo.model.pay.constants.PayConstants;
 import com.imguo.model.pay.entity.PayConfigEntity;
 import com.imguo.service.pay.service.PayConfigService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +20,6 @@ import org.springframework.context.annotation.Configuration;
 @ConditionalOnClass(WxPayService.class)
 @AllArgsConstructor
 @Data
-@Slf4j
 public class WxPayConfigurationOnline {
   private  PayConfigService payConfigService;
 
@@ -29,7 +28,7 @@ public class WxPayConfigurationOnline {
     PayConfigEntity payConfig =
             payConfigService.getOne(
                     Wrappers.<PayConfigEntity>lambdaQuery().eq(PayConfigEntity::getType, PayConstants.PAY_TYPE_1));
-    log.info("payConfig = {}",payConfig);
+    FpLoggers.info("payConfig = {}",payConfig);
     if (ObjectUtil.isNull(payConfig)) {
       throw new RuntimeException("未配置微信支付");
     }

@@ -6,7 +6,6 @@ import com.alibaba.nacos.api.NacosFactory;
 import com.alibaba.nacos.api.config.ConfigService;
 import com.alibaba.nacos.api.exception.NacosException;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.yaml.snakeyaml.Yaml;
 
@@ -14,7 +13,6 @@ import java.util.Map;
 import java.util.Properties;
 
 
-@Slf4j
 @Configuration
 @AllArgsConstructor
 public class NacosUtils {

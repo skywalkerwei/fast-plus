@@ -1,9 +1,9 @@
 package com.imguo.common.core.exception;
 
-//import cn.dev33.satoken.exception.SaTokenException;
-import lombok.extern.slf4j.Slf4j;
+
+import com.imguo.common.core.util.FpLoggers;
+
 import com.imguo.common.core.entity.Result;
-//import cn.dev33.satoken.exception.NotLoginException;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  * 异常处理器
  *
  */
-@Slf4j
 @RestControllerAdvice
 @AutoConfiguration
 public class FastExceptionHandler {
@@ -76,7 +75,7 @@ public class FastExceptionHandler {
 
 	@ExceptionHandler(Exception.class)
 	public Result<String> handleException(Exception ex){
-		log.error("handleException handleException ==== ", ex);
+		FpLoggers.info("handleException handleException ==== ", ex);
 		return Result.fail(ex.getMessage());
 //		return Result.fail(ErrorCode.INTERNAL_SERVER_ERROR.getCode(),ex.getMessage());
 	}

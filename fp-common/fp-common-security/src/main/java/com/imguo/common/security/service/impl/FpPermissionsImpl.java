@@ -5,19 +5,17 @@ import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.json.JSONUtil;
 import com.imguo.common.core.constant.CacheConstants;
-import lombok.extern.slf4j.Slf4j;
+import com.imguo.common.core.util.FpLoggers;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 /**
  * 自定义权限验证接口扩展
  *
  */
 @Component
-@Slf4j
 public class FpPermissionsImpl implements StpInterface {
 
   @Override
@@ -33,8 +31,8 @@ public class FpPermissionsImpl implements StpInterface {
   @Override
   public List<String> getRoleList(Object loginId, String loginType) {
 
-    log.info("getRoleList"+loginId.toString());
-    log.info("getRoleList" +loginType);
+    FpLoggers.info("getRoleList"+loginId.toString());
+    FpLoggers.info("getRoleList" +loginType);
 //    String  loginIdKey = CacheConstants.ROLE_CACHE + loginId.toString() ;
     String  loginIdKey = CacheConstants.ROLE_CACHE  ;
     return ObjectUtil.isNotNull(StpUtil.getSession().get(loginIdKey))

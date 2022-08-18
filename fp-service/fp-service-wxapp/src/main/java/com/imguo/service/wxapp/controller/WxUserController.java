@@ -8,6 +8,7 @@ import cn.binarywang.wx.miniapp.bean.WxMaPhoneNumberInfo;
 import cn.binarywang.wx.miniapp.bean.WxMaUserInfo;
 import cn.hutool.core.util.ObjectUtil;
 import com.imguo.common.core.entity.Result;
+import com.imguo.common.core.util.FpLoggers;
 import com.imguo.common.security.annotation.FpInner;
 import com.imguo.common.security.at.user.SaUserCheckLogin;
 import com.imguo.common.security.util.SecurityUserUtils;
@@ -22,7 +23,6 @@ import com.imguo.service.wxapp.service.WxUserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.common.error.WxErrorException;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,7 +32,6 @@ import javax.validation.Valid;
 @RestController
 @Tag(name="小程序登录")
 @AllArgsConstructor
-@Slf4j
 @FpInner
 public class WxUserController {
 
@@ -46,11 +45,11 @@ public class WxUserController {
 
         try {
             WxMaJscode2SessionResult sessionInfo = wxService.getUserService().getSessionInfo(query.getCode());
-            log.info("code2SessionInfo {}",sessionInfo);
+            FpLoggers.info("code2SessionInfo {}",sessionInfo);
             WxUserEntity userEntity =   wxUserService.checkOpenID(sessionInfo);
-            log.info("userEntity {}",userEntity);
+            FpLoggers.info("userEntity {}",userEntity);
             WxUserVO userVO = WxUserConvert.INSTANCE.convert(userEntity);
-            log.info("userVO {}",userVO);
+            FpLoggers.info("userVO {}",userVO);
             UserDetail tokenInfo = SecurityUserUtils.Login(userEntity.getId());
             userVO.setToken(tokenInfo.getToken());
 

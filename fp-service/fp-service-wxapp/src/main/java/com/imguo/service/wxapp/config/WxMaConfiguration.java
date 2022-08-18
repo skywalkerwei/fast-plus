@@ -4,7 +4,6 @@ import cn.binarywang.wx.miniapp.api.WxMaService;
 import cn.binarywang.wx.miniapp.api.impl.WxMaServiceImpl;
 import cn.binarywang.wx.miniapp.config.impl.WxMaDefaultConfigImpl;
 import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -15,7 +14,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConditionalOnClass(WxMaService.class)
 @ConfigurationProperties(prefix ="wx.miniapp")
-@Slf4j
 public class WxMaConfiguration {
 
     private String appId;

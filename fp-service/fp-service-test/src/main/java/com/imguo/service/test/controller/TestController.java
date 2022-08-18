@@ -4,12 +4,9 @@ import cn.hutool.json.JSONUtil;
 import com.imguo.common.core.entity.Result;
 import com.imguo.common.sms.util.AliSmsUtils;
 import com.imguo.common.storage.utils.LocalStorageUtils;
-import com.imguo.feign.mall.MallFeignService;
-import com.imguo.feign.sys.SysUserFeignService;
-import com.imguo.model.sys.query.SysLoginQuery;
-import com.imguo.model.sys.vo.SysUserVO;
+
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -17,7 +14,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-@Slf4j
+
 @RestController
 @AllArgsConstructor
 public class TestController {
